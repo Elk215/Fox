@@ -1,0 +1,61 @@
+.ic-sber, .ic-dark-message, .ic-message, .ic-beeline, .ic-dark-frame, 
+.ic-frame, .ic-mtc, .ic-coin-blue2, .ic-coin-orange2, .ic-qiwi, 
+.ic-coin-blue, .ic-coin-orange, .ic-dark-rullet-smile, .ic-sad-smile, .ic-roulette-arrow, 
+.ic-load-green, .ic-money-green, .ic-money-red, .ic-money-yellow, .ic-eye-dark, 
+.ic-load-gray, .ic-deposit-warning, .ic-ajax-loader, .ic-play-triangle, .ic-vk-blue, 
+.ic-nav3, .ic-sun, .ic-comment, .ic-user, .ic-youtube, 
+.ic-dollar, .ic-chat, .ic-moon, .ic-nav2, .ic-telegram, 
+.ic-vk, .ic-nav1, .ic-timer, .ic-burger, .ic-eye, 
+.ic-coin, .ic-game-history, .ic-rules, .ic-user-gray, .ic-close, 
+.ic-user-black, .ic-clock-dark, .ic-clock, .ic-nav4
+{ display: inline-block; background: url('../img/sprite.png') no-repeat; overflow: hidden; text-indent: -9999px; text-align: left; }
+ 
+.ic-sber { background-position: -0px -0px; width: 105px; height: 33px; }
+.ic-dark-message { background-position: -0px -33px; width: 99px; height: 67px; }
+.ic-message { background-position: -0px -100px; width: 99px; height: 67px; }
+.ic-beeline { background-position: -0px -167px; width: 90px; height: 33px; }
+.ic-dark-frame { background-position: -0px -200px; width: 86px; height: 86px; }
+.ic-frame { background-position: -0px -286px; width: 86px; height: 85px; }
+.ic-mtc { background-position: -0px -371px; width: 84px; height: 33px; }
+.ic-coin-blue2 { background-position: -0px -404px; width: 80px; height: 80px; }
+.ic-coin-orange2 { background-position: -0px -484px; width: 80px; height: 80px; }
+.ic-qiwi { background-position: -0px -564px; width: 64px; height: 33px; }
+.ic-coin-blue { background-position: -0px -597px; width: 58px; height: 58px; }
+.ic-coin-orange { background-position: -0px -655px; width: 56px; height: 57px; }
+.ic-dark-rullet-smile { background-position: -0px -712px; width: 56px; height: 53px; }
+.ic-sad-smile { background-position: -0px -765px; width: 56px; height: 53px; }
+.ic-roulette-arrow { background-position: -58px -597px; width: 47px; height: 26px; }
+.ic-load-green { background-position: -58px -623px; width: 46px; height: 46px; }
+.ic-money-green { background-position: -56px -669px; width: 43px; height: 21px; }
+.ic-money-red { background-position: -56px -690px; width: 43px; height: 21px; }
+.ic-money-yellow { background-position: -56px -711px; width: 43px; height: 21px; }
+.ic-eye-dark { background-position: -56px -732px; width: 42px; height: 42px; }
+.ic-load-gray { background-position: -56px -774px; width: 38px; height: 38px; }
+.ic-deposit-warning { background-position: -56px -812px; width: 36px; height: 36px; }
+.ic-ajax-loader { background-position: -64px -564px; width: 32px; height: 32px; }
+.ic-play-triangle { background-position: -0px -818px; width: 31px; height: 32px; }
+.ic-vk-blue { background-position: -31px -848px; width: 29px; height: 23px; }
+.ic-nav3 { background-position: -60px -848px; width: 26px; height: 20px; }
+.ic-sun { background-position: -80px -404px; width: 25px; height: 26px; }
+.ic-comment { background-position: -80px -430px; width: 24px; height: 21px; }
+.ic-user { background-position: -80px -451px; width: 24px; height: 24px; }
+.ic-youtube { background-position: -80px -475px; width: 24px; height: 24px; }
+.ic-dollar { background-position: -80px -499px; width: 22px; height: 20px; }
+.ic-chat { background-position: -84px -371px; width: 21px; height: 21px; }
+.ic-moon { background-position: -80px -519px; width: 21px; height: 21px; }
+.ic-nav2 { background-position: -80px -540px; width: 21px; height: 21px; }
+.ic-telegram { background-position: -31px -818px; width: 21px; height: 21px; }
+.ic-vk { background-position: -0px -850px; width: 21px; height: 21px; }
+.ic-nav1 { background-position: -60px -868px; width: 20px; height: 20px; }
+.ic-timer { background-position: -80px -868px; width: 20px; height: 20px; }
+.ic-burger { background-position: -86px -200px; width: 19px; height: 14px; }
+.ic-eye { background-position: -86px -214px; width: 18px; height: 13px; }
+.ic-coin { background-position: -86px -227px; width: 17px; height: 12px; }
+.ic-game-history { background-position: -86px -239px; width: 17px; height: 11px; }
+.ic-rules { background-position: -86px -250px; width: 17px; height: 14px; }
+.ic-user-gray { background-position: -86px -264px; width: 17px; height: 18px; }
+.ic-close { background-position: -86px -282px; width: 16px; height: 16px; }
+.ic-user-black { background-position: -86px -298px; width: 16px; height: 18px; }
+.ic-clock-dark { background-position: -90px -167px; width: 13px; height: 13px; }
+.ic-clock { background-position: -90px -180px; width: 13px; height: 13px; }
+.ic-nav4 { background-position: -86px -316px; width: 8px; height: 17px; }

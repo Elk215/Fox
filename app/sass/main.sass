@@ -1,0 +1,3980 @@
+@import "fonts"
+@import "vars"
+@import "normalize.css"
+@import "sprite.css"
+@import "../libs/nanoScroller/nanoScroller.css"
+@import "../libs/slick/slick.css"
+@import "../libs/slick/slick-theme.css"
+@import "../libs/iziModal/css/iziModal.css"
+@import "../libs/notifications/notifications.css"
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+* 
+	box-sizing: border-box
+
+ul
+	padding-left: 0
+	margin: 0
+	list-style: none	
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: rgba(0,0,0,.25)
+	border-color: rgba(0,0,0,.25)
+
+html, body
+	height: 100%
+
+body
+	font-size: 16px
+	width: 100%
+	position: relative
+	background: #f3f5f7
+	font-family: 'Roboto'
+	opacity: 1
+	
+
+.button
+	color: #ffffff
+	font-family: 'MyriadPro-Bold'
+	font-size: 13px
+	line-height: 49px
+	height: 49px
+	padding: 0 15px
+	letter-spacing: 0.33px
+	box-shadow: 0 4px 18px rgba(235, 180, 47, 0.15)
+	border-radius: 2px
+	background-color: #ffb83a
+	display: inline-block
+	cursor: pointer
+	text-decoration: none
+	text-align: center
+	text-transform: uppercase
+	transition: .3s
+	&:hover
+		background-color: darken(#ffb83a, 10%)
+	&--gradient
+		transition: .3s
+		background-image: linear-gradient(45deg, #ff8641, #ffb73a)
+		&:hover
+			transition: .3s
+			background-image: linear-gradient(45deg, #ff660e, #ffa407)
+			
+	&--border
+		border: 2px solid #d2d3d4
+		color: #c4c8ce
+		line-height: 45px
+		background: transparent
+		box-shadow: none
+		&:hover
+			background-color: darken(#fff, 7%) 
+	&--gray	
+		background-color: #f1f4f7
+		color: #aaafb8
+		box-shadow: none
+		&:hover
+			background-color: darken(#f1f4f7, 7%) 
+
+.padding-wrap
+	padding: 20px 30px 20px
+
+.mobile-show
+	display: none
+//
+// Header
+//		
+
+.header
+	display: flex
+	&__left
+		box-shadow: 0 -8px 16px rgba(2, 2, 3, 0.15)
+		background-color: #ffffff
+		width: 300px
+		text-align: center
+		padding-top: 22px
+		position: relative
+		&:after
+			position: absolute
+			content: ''
+			bottom: -2px
+			left: 10px
+			right: 10px
+			border-bottom: 4px solid #e8ecf2
+			border-radius: 3px
+	&__center
+		width: calc(100% - 600px)
+		border-bottom: 1px solid #e1e1e1
+		justify-content: space-between
+		align-items: center
+		display: flex
+	&__right
+		width: 300px
+		border-bottom: 1px solid #e1e1e1
+
+.menu
+	&-open
+		width: 30px
+		height: 30px
+		display: none
+		cursor: pointer
+		position: relative	
+		i
+			position: absolute
+			top: 0
+			left: 0
+			bottom: 0
+			right: 0
+			margin: auto	
+	&-close
+		width: 30px
+		height: 30px
+		display: none
+		cursor: pointer
+		position: relative	
+		i
+			position: absolute
+			top: 0
+			left: 0
+			bottom: 0
+			right: 0
+			margin: auto	
+.nav	
+	display: inline-flex
+	&__list
+		display: flex
+	&__item	
+		display: inline-block
+		list-style: none	
+		margin-right: 35px
+		&:last-child
+			margin-right: 0
+	&__link	
+		text-decoration: none
+		color: #565c66
+		text-transform: uppercase
+		font-size: 13px
+		display: flex
+		align-items: center
+		padding: 30px 20px
+		height: 100%
+		font-family: 'Taile-Bold'
+		position: relative
+		transition: .3s
+		&:before
+			position: absolute
+			content: ''
+			bottom: -3px
+			left: 0
+			right: 0
+			height: 1px
+			background: #ff8a3c
+			transition: .3s
+			opacity: 0
+		&:after
+			position: absolute
+			content: ''
+			width: 0
+			left: 0
+			right: 0
+			z-index: 5
+			bottom: -8px
+			margin: auto
+			transition: .3s
+			height: 0
+			border-style: solid
+			border-width: 6px 6.5px 0 6.5px
+			border-color: #ff8a3c transparent transparent transparent
+			opacity: 0
+		&--active
+			&:before
+				position: absolute
+				content: ''
+				bottom: -3px
+				left: 0
+				right: 0
+				height: 1px
+				background: #ff8a3c
+				transition: .3s
+				opacity: 1
+			&:after
+				position: absolute
+				content: ''
+				width: 0
+				left: 0
+				right: 0
+				bottom: -8px
+				margin: auto
+				z-index: 5
+				height: 0
+				border-style: solid
+				border-width: 6px 6.5px 0 6.5px
+				border-color: #ff8a3c transparent transparent transparent
+				opacity: 1	
+		i
+			margin-right: 12px
+		&--active
+			color: #ff8a3c	
+		&:hover
+			color: #ff8a3c
+			&:after, &:before
+				opacity: 1
+
+.social-menu
+	display: flex
+	align-items: flex-start
+	padding-top: 15px
+	&__wrap
+		&--adaptive
+			display: none
+			position: relative
+	&__open
+		position: relative
+		width: 20px
+		height: 20px
+		display: none
+		cursor: pointer
+		&:before
+			position: absolute
+			content: ''
+			top: 0
+			left: 8px
+			width: 4px
+			height: 4px
+			background: #86888A
+			border-radius: 5px
+		&:after
+			position: absolute
+			content: ''
+			bottom: 0
+			left: 8px
+			width: 4px
+			height: 4px
+			background: #86888A
+			border-radius: 5px	
+		span
+			position: absolute
+			left: 8px
+			top: 8px
+			width: 4px
+			height: 4px
+			display: inline-block
+			background: #86888A
+			border-radius: 5px
+		
+	&__close	
+		width: 20px
+		height: 20px
+		display: none
+		cursor: pointer
+		position: relative
+		i
+			position: absolute
+			top: 0
+			left: 0
+			bottom: 0
+			right: 0
+			margin: auto
+	
+
+	&__item	
+		margin-left: 20px
+		&:first-child
+			margin-left: 0
+		a
+			text-decoration: none	
+			i
+				vertical-align: top
+			i.ic-telegram
+				margin-top: -1px	
+			i.ic-user
+				margin-top: -1px	
+			span
+				display: block	
+				text-align: center
+				font-size: 11px
+				letter-spacing: 1.65px
+				font-family: 'Taile'
+				color: #41c27b
+.user
+	position: relative
+	padding: 0 20px 0 25px
+	display: flex
+	align-items: center
+	&--mobile
+		display: none
+	&__top
+		display: flex
+		align-items: center
+		width: 100%
+	&__arrow
+		display: none
+	&__ava
+		width: 86px
+		height: 85px
+		background: url('../img/sprite.png') -0px -286px no-repeat
+		position: relative
+		margin-right: 12px
+		img
+			position: absolute
+			top: 0
+			bottom: 0
+			left: 0
+			right: 0
+			margin: auto
+			width: 44px
+			height: 44px
+	&__info
+		flex-grow: 1
+	&__level
+		color: #3f4042
+		font-size: 10px
+		font-family: 'MyriadPro-Bold'
+		text-transform: uppercase
+		letter-spacing: 1.5px
+	&__exp		
+		display: block
+		color: #828282
+		font-family: 'MyriadPro'
+		font-size: 10px
+		text-transform: uppercase
+		letter-spacing: 1.5px	
+	&__close
+		display: none
+		cursor: pointer
+	&__open
+		cursor: pointer		
+.dropdown
+	position: absolute
+	top: 84px
+	background-color: #f3f5f7
+	left: 0
+	right: 0
+	display: none
+	z-index: 30
+	&__top	
+		padding: 10px 10px 6px 18px
+		display: flex
+		justify-content: space-between
+		align-items: center
+		border-bottom: 4px solid #d1d0d0
+		position: relative
+	&__level
+		color: #f6a83d
+		font-family: 'Taile-Bold'
+		margin: 0
+		font-size: 13px
+		line-height: 24px
+		text-transform: uppercase
+		letter-spacing: 0.33px
+	&__exp
+		margin: 0
+		color: #f6473d
+		font-family: 'Taile'
+		font-size: 11px
+		letter-spacing: 0.28px
+		span
+			color: #929498	
+	&__timeline
+		position: absolute
+		left: 0
+		top: 100%
+		height: 4px
+		width: 60%		
+		background-image: linear-gradient(to right, #f6e73d 0%, #f67a3d 48%, #f63d3d 100%)	
+	&__menu
+		li
+			border-bottom: 1px solid #e1e2e3
+			a	
+				display: block
+				padding: 12px 50px 12px 18px
+				color: #6d6e71
+				font-family: 'Roboto-Light'
+				font-size: 13px
+				text-decoration: none
+				letter-spacing: 0.33px	
+				position: relative
+				transition: .3s
+				cursor: pointer
+				&:hover
+					background-color: #e7e5e5
+				i
+					position: absolute
+					top: 0
+					bottom: 0
+					right: 10px
+					margin: auto
+
+//
+// Main 
+//		
+
+.main
+	display: flex
+	position: relative
+	&--hidden
+		overflow: hidden
+	&__left
+		box-shadow: 0 0 16px rgba(2, 2, 3, 0.15)
+		background-color: #ffffff
+		width: 300px
+		position: relative
+		z-index: 1
+		padding: 0 10px
+		height: 100%
+	&__center
+		width: calc(100% - 600px)
+		padding: 7px 10px 30px 0
+		transition: .3s
+		&--close
+			width: calc(100% - 300px)
+			padding: 7px 30px 30px 0
+		&--king
+			.nano>.nano-pane 
+				right: 0
+			.nano > .nano-pane > .nano-slider
+    			background: #dcdcdc	
+			&-wrap
+				height: 800px
+		&--full	
+			padding: 7px 0 0 0
+	&__right
+		width: 300px
+
+//
+// Left sidebar
+//		
+
+.profile
+	border-bottom: 4px solid #e8ecf2
+	border-radius: 3px
+	padding: 30px 10px 20px
+	text-align: center
+	&__avatar
+		height: 140px
+		width: 140px
+		border: 1px solid #f5f5f6
+		position: relative
+		border-radius: 50%
+		margin: 0 auto 10px
+		&:before
+			position: absolute
+			content: ''
+			width: 110px
+			height: 110px
+			border: 1px solid #f5f5f6
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			margin: auto
+			border-radius: 50%
+		img
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			margin: auto
+			max-width: 100px
+			max-height: 100px
+			border-radius: 50%
+	&__name	
+		font-family: 'Roboto-Bold'
+		font-size: 20px
+		line-height: 24px
+		color: #3f4042
+		letter-spacing: 0.4px
+		margin: 0
+
+.balance
+	border-bottom: 4px solid #e8ecf2
+	border-radius: 3px
+	padding: 20px 10px
+	&__title
+		font-size: 15px
+		line-height: 24px
+		color: #737678
+		letter-spacing: 0.38px
+		margin: 0 0 15px
+	&__value	
+		color: #ffa542
+		margin: 0 0 15px
+		font-family: 'MyriadPro-Bold'
+		font-size: 30px
+		line-height: 24px	
+		text-transform: uppercase
+		span
+			font-family: 'MyriadPro'
+			font-size: 10px
+			letter-spacing: 2px
+			margin-left: 5px
+	&__action
+		display: flex
+		align-items: center
+		justify-content: center		
+		text-align: center		
+	&__input
+		max-width: 124px
+		width: 100%
+		margin: 0 2px
+	&__output
+		max-width: 124px
+		width: 100%	
+		margin: 0 2px		
+		
+.notification
+	padding: 20px 10px
+	border-bottom: 4px solid #e8ecf2
+	border-radius: 3px
+	&__title
+		font-size: 15px
+		line-height: 24px
+		color: #737678
+		letter-spacing: 0.38px
+		margin: 0 0 15px
+	&__form	
+	&__radio
+		display: block
+		position: relative
+		padding-left: 35px
+		margin-bottom: 12px
+		cursor: pointer
+		user-select: none
+		input
+			position: absolute
+			opacity: 0
+			cursor: pointer
+			height: 0
+			width: 0
+			transition: .3s
+	&__name		
+		font-family: 'Roboto-Light'
+		font-size: 14px
+		color: #9a9ca0
+		letter-spacing: 0.35px
+	&__check
+		position: absolute
+		top: 0
+		left: 0
+		bottom: 0
+		margin: auto
+		width: 16px
+		height: 16px
+		border-radius: 50%
+		background-color: #dfdfdf
+		border: 1px solid transparent
+	&__text
+		font-size: 13px
+		font-family: 'Roboto-Light'
+		line-height: 20px
+		color: #b1b2b2
+		letter-spacing: 0.33px
+
+.notification__radio input:checked ~ .notification__check
+	border: 1px solid #367bf4
+	background-color: #92b1e4
+	transition: .3s
+
+.notification__radio input:checked ~ .notification__name
+	color: #2089e0
+	transition: .3s
+.copyright
+	padding: 20px 10px
+	border-bottom: 4px solid #e8ecf2
+	border-radius: 3px
+	&__text
+		font-size: 13px
+		font-family: 'Roboto-Light'
+		line-height: 20px
+		color: #b1b2b2
+		letter-spacing: .33px
+		margin: 0
+.help
+	padding: 20px 10px
+	border-bottom: 4px solid #e8ecf2
+	border-radius: 3px
+	&__title
+		font-size: 15px
+		line-height: 24px
+		color: #737678
+		letter-spacing: 0.38px
+		margin: 0 0 15px
+	&__link
+		font-size: 14px
+		color: #737678
+		letter-spacing: 0.35px
+		position: relative
+		padding-left: 30px
+		cursor: pointer
+		i
+			position: absolute
+			top: 0
+			bottom: 
+			left: 0
+			margin: auto
+
+.application
+	padding: 20px 10px
+	&__title
+		font-size: 15px
+		line-height: 24px
+		color: #737678
+		letter-spacing: 0.38px
+		margin: 0 0 15px
+	&__link
+		display: block
+		img
+			max-width: 180px	
+			width: 100%
+
+.create-game
+	padding: 20px 10px
+	border-bottom: 4px solid #e8ecf2
+	border-radius: 3px
+	&__info
+		display: flex
+		justify-content: space-between
+	&__title
+		font-size: 15px
+		line-height: 24px
+		color: #737678
+		letter-spacing: 0.38px
+		margin: 0
+	&__value
+		font-size: 15px
+		line-height: 24px
+		color: #cacbcc
+		letter-spacing: 0.38px
+		margin: 0
+	&__body
+		position: relative	
+		padding: 40px 0 30px
+	&__button
+		height: 128px
+		width: 128px
+		background: #24ad44
+		border-radius: 100%
+		display: block
+		margin: auto
+		opacity: 1
+		animation: shake 2s infinite ease-in-out
+		animation-delay: .6s
+		text-decoration: none
+		text-align: center
+		padding-top: 39px
+		text-transform: uppercase
+		color: #fff
+		font-size: 13px
+		font-family: 'MyriadPro-Bold'
+		line-height: 18px
+		letter-spacing: 1.3px
+		transition: .3s
+		&:hover
+			background-color: darken(#24ad44, 7%)
+		span
+			font-size: 34px
+		&:after
+			content: ''
+			position: absolute
+			left: -11px
+			top: -11px
+			background: #24ad44 
+			border-radius: 100%
+			animation: pulse 3s infinite ease-in-out
+			height: 150px
+			width: 150px
+			animation-delay: .2s
+			opacity: .5
+			z-index: -3
+		&:before
+			content: ''
+			position: absolute
+			left: -31px
+			top: -31px
+			background: #24ad44 
+			border-radius: 100%
+			animation: pulse 3s infinite ease-in-out
+			height: 190px
+			width: 190px
+			opacity: .25
+			-webkit-animation-delay: .6s
+			animation-delay: .6s
+			z-index: -2
+
+@keyframes shake
+  0% 
+     transform: translateX(0)
+  
+  25% 
+     transform: scale(1.01)
+  
+  50% 
+     transform: scale(1.02)
+  
+  100% 
+  
+@keyframes pulse
+  0%
+    transform: scale(0)
+  50%
+    transform: scale(1)
+  100%
+    transform: scale(1)
+    opacity: 0
+
+.rooms	
+	padding: 20px 10px
+	border-bottom: 4px solid #e8ecf2
+	border-radius: 3px
+	&__title
+		font-size: 15px
+		line-height: 24px
+		color: #737678
+		letter-spacing: 0.38px
+		margin: 0 0 20px
+	&__text
+		font-size: 13px
+		font-family: 'Roboto-Light'
+		line-height: 20px
+		color: #b1b2b2
+		letter-spacing: 0.33px
+		margin: 0
+	&__wrap
+		display: flex
+		justify-content: center
+		margin-bottom: 20px
+	&__box
+		display: none	
+		animation: fadeEffect .5s
+		&--active
+			display: block	
+	&__link
+		display: block
+		font-family: 'MyriadPro-Bold'
+		font-size: 13px
+		letter-spacing: 1.3px
+		height: 52px
+		line-height: 52px
+		text-align: center
+		width: 130px
+		color: #b1b5bb
+		border: 1px solid #e8eaee
+		text-transform: uppercase
+		text-decoration: none
+		transition: .3s
+		cursor: pointer
+		&:hover
+			background-color: darken(#fff, 7%) 
+		&:first-child
+			border-right: 0
+			border-radius: 2px 0 0 2px
+		&:last-child 	
+			border-left: 0
+			border-radius: 0 2px 2px 0
+		&--active
+			color: #fff
+			background: #3265d4
+			cursor: default
+			border-color: #3265d4
+			&:hover
+				background-color: #3265d4
+
+.bank
+	padding: 20px 10px
+	border-bottom: 4px solid #e8ecf2
+	border-radius: 3px
+	&__info
+		display: flex
+		justify-content: space-between
+	&__body
+		text-align: center	
+	&__title
+		font-size: 13px
+		line-height: 24px
+		color: #737678
+		letter-spacing: 0.38px
+		margin: 0
+	&__players
+		font-size: 13px
+		line-height: 24px
+		color: #cacbcc
+		letter-spacing: 0.38px
+		margin: 0
+	&__hint	
+		font-size: 13px
+		font-family: 'Roboto-Light'
+		line-height: 20px
+		color: #b1b2b2
+		letter-spacing: 0.33px
+		margin: 0
+	&__circle
+		border: 1px solid #f6f7fa
+		border-radius: 50%
+		position: relative
+		z-index: 2
+		width: 240px
+		height: 240px
+		margin: 0 auto 20px
+		&:before
+			position: absolute
+			content: ''
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			margin: auto
+			width: 195px
+			height: 195px
+			border-radius: 50%
+			z-index: 1
+			background-color: #F1F4F7			
+		&-inside	
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			z-index: 5
+			margin: auto
+			width: 158px
+			height: 158px
+			border-radius: 50%
+			padding-top: 55px
+			background-color: #fff		
+			&:after
+				position: absolute
+				content: ''
+				top: 0
+				left: 0
+				right: 0
+				bottom: 0
+				margin: auto
+				width: 158px
+				height: 158px
+				border-radius: 50%
+				z-index: 2
+				background: url('../img/line_bank.png') no-repeat
+				background-size: 100% 100% 
+				animation: 3s linear 0s normal none infinite rot
+			&:before
+				position: absolute
+				content: ''
+				top: 0
+				left: 0
+				right: 0
+				bottom: 0
+				margin: auto
+				width: 120px
+				height: 120px
+				border-radius: 50%
+				z-index: 2
+				background-image: linear-gradient(to left, #edeef0 0%, #fefefe 100%)
+	&__value
+		font-size: 30px
+		font-family: 'MyriadPro-Bold'
+		color: #ffa542
+		line-height: 31px
+		text-align: center
+		margin: 0
+		position: relative
+		z-index: 10
+		span			
+			font-size: 12px
+			font-family: 'MyriadPro'
+			display: block
+			letter-spacing: 2px
+	&__button
+		max-width: 152px
+		width: 100%	
+		margin-bottom: 20px
+
+//
+// Right sidebar
+//	
+
+.chat
+	position: absolute
+	top: -1px
+	z-index: 20
+	height:  calc(100vh - 85px)
+	bottom: 0
+	right: 0
+	transition: .3s
+	
+	&--fixed
+		position: fixed
+		height: 100vh
+	&--close
+		right: -301px
+		transition: .3s
+	&__top
+		position: relative
+		background: #fff 
+		padding: 20px 15px 20px 54px
+		&:after
+			position: absolute
+			content: ''
+			right: 0
+			top: 0
+			width: 99px
+			height: 67px
+			background: url('../img/sprite.png') -0px -100px no-repeat
+	&__title
+		font-family: "MyriadPro-Bold"
+		font-size: 16px
+		line-height: 18px
+		margin: 0
+		color: #3e4043
+		letter-spacing: 0.4px
+		margin-bottom: 5px
+	&__rules
+		font-family: 'Roboto-Light'
+		font-size: 13px
+		text-decoration: underline
+		color: #a4a5a8
+		letter-spacing: 0.33px
+		cursor: pointer
+	&__close
+		background-color: #fff
+		position: absolute
+		top: 0
+		bottom: 0
+		left: 0
+		width: 26px
+		z-index: 5
+		border: 1px solid #e1e1e1
+		cursor: pointer
+		transition: .3s
+		&:after
+			position: absolute
+			content: ''
+			top: 0
+			bottom: 0
+			margin: auto
+			left: 4px
+			width: 7px
+			height: 7px
+			border-right: 1px solid #bebebe
+			border-top: 1px solid #bebebe
+			transform: rotate(45deg)
+		&:before
+			position: absolute
+			content: ''
+			top: 0
+			bottom: 0
+			margin: auto
+			left: 8px
+			width: 7px
+			height: 7px
+			border-right: 1px solid #bebebe
+			border-top: 1px solid #bebebe
+			transform: rotate(45deg)	
+	&__open
+		background-color: #fff
+		position: absolute
+		top: 0
+		bottom: 0
+		left: -26px
+		width: 26px
+		border: 1px solid #e1e1e1
+		cursor: pointer
+		z-index: 5
+		&:after
+			position: absolute
+			content: ''
+			top: 0
+			bottom: 0
+			margin: auto
+			left: 7px
+			width: 7px
+			height: 7px
+			border-right: 1px solid #bebebe
+			border-top: 1px solid #bebebe
+			transform: rotate(-135deg)
+		&:before
+			position: absolute
+			content: ''
+			top: 0
+			bottom: 0
+			margin: auto
+			left: 11px
+			width: 7px
+			height: 7px
+			border-right: 1px solid #bebebe
+			border-top: 1px solid #bebebe
+			transform: rotate(-135deg)			
+	&__body
+		position: relative
+		height: calc(100% - 312px)
+		padding: 10px 0
+		&:before
+			position: absolute
+			content: ''
+			top: 0
+			left: 25px
+			bottom: 0
+			width: 1px
+			background: #e1e1e1
+		&:after
+			position: absolute
+			content: ''
+			top: 0
+			bottom: 0
+			z-index: -1
+			right: 0
+			width: calc(100% - 25px)	
+			background: #fff	
+
+	&__bottom	
+		padding-left: 25px
+		&-wrap
+			background: #fff
+			border-left: 1px solid #e1e1e1
+			text-align: center
+			position: relative
+			i
+				position: absolute
+				top: 0
+				bottom: 0
+				margin: auto
+				left: -19px
+		&-text
+			margin: 0
+			font-family: 'Roboto-Light'
+			font-size: 13px
+			line-height: 18px
+			color: #616467
+			letter-spacing: 0.33px
+			padding: 25px 20px
+			background-color: #e5e7eb
+		&-button
+			max-width: 124px
+			width: 100%		
+			margin: 20px 0 30px	
+
+.chat-form
+	position: relative
+	height: 46px
+	width: 100%
+	&__inp
+		width: 100%
+		height: 100%
+		padding: 0 56px 0 15px
+		line-height: 46px
+		border: 2px solid #d2d3d4
+		background: transparent
+		font-family: 'Roboto-Light'
+		font-size: 12px
+		color: #676b6f
+		letter-spacing: .3px
+		outline: none
+		&::placeholder
+			color: #676b6f
+	&__btn	
+		position: absolute
+		top: 0
+		right: 0
+		width: 46px
+		height: 46px
+		background: transparent
+		border: none
+		outline: none
+		cursor: pointer
+		i
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			margin: auto
+
+.message
+	padding: 10px 10px 10px 0
+	position: relative
+	&:after
+		position: absolute
+		content: ''
+		top: 0
+		bottom: 0
+		right: 0
+		background: #ffffff
+		width: calc(100% - 26px)
+		z-index: -1
+	&__top
+		display: flex
+		align-items: center
+		padding: 0 10px 0 6px
+	&__ava
+		position: relative
+		width: 40px
+		height: 40px
+		margin-right: 20px
+		img
+			border: 2px solid #d8d8d8
+			border-radius: 50%
+			max-width: 100%
+	&__value
+		border-radius: 50%
+		height: 16px
+		font-size: 10px
+		line-height: 16px
+		width: 16px
+		background: #e32800
+		color: #fff
+		text-align: center
+		position: absolute
+		right: 0px
+		bottom: 0px
+	&__name
+		flex-grow: 1
+		font-size: 12px
+		font-family: 'Roboto-Light'
+		margin: 0
+		color: #738ab7
+		letter-spacing: 0.3px
+		text-decoration: none
+		position: relative
+		&--icon
+			padding-left: 30px
+			i
+				position: absolute
+				top: 0
+				bottom: 0
+				left: 0
+				margin: auto
+	&__time	
+		font-family: 'Roboto-Light'
+		font-size: 11px
+		color: #a7a9ac
+		letter-spacing: 0.28px			
+	&__body	
+		border-radius: 2px
+		background-color: #eff2f8
+		margin: 0 10px 0 45px
+	&__text	
+		padding: 13px 11px
+		font-family: 'Roboto-Light'
+		font-size: 12px
+		line-height: 22px
+		color: #676b6f
+		letter-spacing: 0.3px
+		margin: 0
+	&__link
+		color: #f84c49
+		text-decoration-style: dashed
+							
+//
+// Center block
+//
+
+//
+// King page
+//
+
+.game
+	box-shadow: 0 3px 8px rgba(2, 2, 3, 0.07)
+	border-radius: 3px
+	background:  #fff url('../img/game-pattern.png') no-repeat center center / cover
+	padding: 0 20px 0 30px
+	margin-right: 15px
+	margin-bottom: 10px
+	display: flex
+	max-height: 170px
+	overflow: hidden
+	position: relative
+	justify-content: space-between
+	&__left
+		padding: 20px 0
+		max-width: calc(50% - 65px)
+		width: 100%
+	&__right
+		display: flex
+		justify-content: space-between
+		padding: 20px 0
+		max-width: calc(50% - 95px)
+		width: 100%
+	&__center
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		margin: auto
+		width: 180px
+		height: 180px	
+	&__title
+		font-family: 'Roboto'
+		font-size: 11px
+		line-height: 18px
+		text-decoration: underline
+		color: #7b7d7e
+		letter-spacing: 1.1px	
+		margin: 0 0 15px
+	&__participants
+		position: relative
+		&:before
+			position: absolute
+			content: ''
+			top: 0
+			bottom: 0
+			left: 0
+			z-index: 10
+			width: 90px
+			box-shadow: 75px 0px 16px rgba(254, 254, 254, .9) inset
+		&-item
+			img
+				border-radius: 50%
+				background-color: #1a1c20
+				border: 1px solid #d6d7d7
+	&__winner
+		border-radius: 50%
+		width: 100%
+		height: 100%
+		position: relative
+		margin-top: -5px
+		background-image: linear-gradient(35deg, rgba(#f9d75f, .9) 0%, #fb685d 100%) 
+		&-img
+			position: absolute
+			top: 0
+			bottom: 0
+			left: 0
+			right: 0
+			margin: auto
+			max-width: 88px
+			width: 100%
+		&:after
+			position: absolute
+			content: ''
+			top: 0
+			left: 0
+			bottom: 0
+			right: 0
+			margin: auto
+			width: 140px
+			height: 140px
+			background: url('../img/winner-frame.png') no-repeat
+			background-size: 100% 100%
+			animation: 3s linear 0s normal none infinite rot			
+	&__bank
+		text-align: center
+		background-image: linear-gradient(45deg, #fff6f1 0% , #fff 100%) 
+		position: relative
+		width: 134px
+		height: 134px
+		padding-top: 30px
+		border-radius: 50%
+		&--mobile
+			display: none
+		&:after
+			position: absolute
+			content: ''
+			top: 0
+			left: 0
+			bottom: 0
+			right: 0
+			border-top: 2px solid #ffa542
+			border-left: 2px solid #ffa542
+			border-radius: 50%
+			animation: 3s linear 0s normal none infinite rot
+		&-title
+			font-family: 'MyriadPro-Bold'
+			font-size: 14px
+			line-height: 24px
+			color: #898a8b
+			margin: 0
+			letter-spacing: 1.4px
+		&-value
+			font-family: 'MyriadPro-Bold'
+			font-size: 24px
+			line-height: 24px
+			color: #ffa542
+			display: block
+		&-text	
+			font-family: 'MyriadPro'
+			font-size: 11px
+			line-height: 24px
+			color: #ffa542
+			text-transform: uppercase
+			letter-spacing: 3.3px
+	&__time		
+		&-text
+			font-family: 'Roboto-Light'
+			font-size: 14px
+			color: #a9aaae
+			letter-spacing: 0.35px
+			margin: 0 0 10px
+			text-align: right
+		&-value	
+			font-family: 'Roboto-Light'
+			font-size: 30px
+			color: #a2a4a5
+			letter-spacing: 3px
+		&-link
+			span		
+				font-family: MyriadPro-Black	
+				font-size: 16px
+@keyframes rot 
+	0%
+		transform: rotate(0deg)
+	100% 
+		transform: rotate(360deg)
+.game-history
+	padding-right: 15px
+	&__item
+		box-shadow: 0 3px 8px rgba(2, 2, 3, 0.07)
+		border-radius: 3px
+		background-color: #fff
+		display: flex
+		align-items: center
+		justify-content: space-between
+		padding: 25px 20px 25px 30px
+		margin-bottom: 10px
+		&:last-child
+			margin-bottom: 0
+	&__left
+		display: flex
+		align-items: center
+	&__right
+		text-align: right
+	&__avatar
+		width: 54px
+		height: 54px
+		box-shadow: 0 0 21px rgba(255, 148, 9, 0.15)
+		border-radius: 50%
+		position: relative
+		margin-right: 20px
+		img
+			max-width: 100%
+			width: 100%
+			border-radius: 50%
+		&:after
+			position: absolute
+			content: ''
+			top: 0
+			left: 0
+			border: 3px solid #f6963d
+			border-radius: 50%
+			right: 0
+			bottom: 0
+
+	&__name
+		font-family: 'Roboto-Bold'
+		margin: 0
+		font-size: 13px
+		color: #525456
+		letter-spacing: 0.33px
+	&__text
+		font-family: 'Roboto-Bold'
+		font-size: 13px
+		letter-spacing: 0.33px
+		color: #bdbebf
+		margin: 0 5px
+	&__result
+		margin: 0
+		color: #ffa542
+		font-family: 'MyriadPro-Bold'
+		font-size: 18px
+		span
+			font-family: 'MyriadPro'
+			font-size: 10px
+			line-height: 23px
+			text-transform: uppercase
+			letter-spacing: 2px	
+	&__title
+		font-size: 11px
+		font-family: 'Roboto'
+		line-height: 18px
+		text-decoration: underline
+		color: #8b8c8e
+		letter-spacing: 1.1px
+		margin: 0 0 10px
+	&__time			
+		font-size: 14px
+		font-family: 'Roboto-Light'
+		color: #a7acac
+		margin: 0
+		letter-spacing: 0.7px
+		position: relative
+		padding-left: 25px
+		line-height: 17px
+		i
+			position: absolute
+			left: 0
+			top: 0
+			bottom: 0
+			margin: auto
+
+//
+// Coin flip page
+//
+
+.coin-history
+	display: flex
+	justify-content: space-between
+	margin: 0 15px 10px 0
+	&__left
+		width: calc(50% - 5px)	
+		box-shadow: 0 3px 8px rgba(2, 2, 3, 0.07)
+		border-radius: 3px
+		background-color: #ffffff
+		padding: 20px 0 45px
+	&__right
+		width: calc(50% - 5px)
+		box-shadow: 0 3px 8px rgba(2, 2, 3, 0.07)
+		border-radius: 3px
+		background-color: #ffffff
+		padding: 20px 0 45px
+	&__title
+		font-family: 'MyriadPro-Bold'
+		font-size: 16px
+		line-height: 18px
+		color: #3e4043
+		letter-spacing: 0.4px
+		text-transform: uppercase
+		margin: 0 0 38px	
+		padding: 0 30px
+.coin-history.mobile-show
+	display: none
+
+
+.coin-history-box
+	display: flex
+	justify-content: space-between
+	&__col
+		text-align: center
+		width: 33%
+		padding-top: 10px
+		&--center
+			position: relative
+			&:before
+				position: absolute
+				content: ''
+				left: 0
+				top: 0
+				width: 1px
+				height: calc(100% - 4px)
+				background-color: #e1e1e1
+			&:after
+				position: absolute
+				content: ''
+				right: 0
+				top: 0
+				width: 1px
+				height: calc(100% - 4px)
+				background-color: #e1e1e1
+		&--last
+			position: relative		
+	i
+		margin-top: 5px			
+	&__value
+		font-family: 'MyriadPro-Bold'
+		font-size: 24px
+		color: #6f6f6f
+		letter-spacing: 0.6px
+		margin: 0 0 5px
+		text-transform: uppercase
+		&--orange
+			color: #f6a03d
+			font-size: 24px
+			letter-spacing: 0
+			span
+				font-family: 'MyriadPro'
+				color: #f6a03d
+				font-size: 10px
+				letter-spacing: 2px
+	&__text
+		font-family: 'Roboto-Light'
+		font-size: 12px
+		line-height: 18px
+		color: #737678
+		letter-spacing: 0.3px
+		margin: 0
+									
+.coin-hint
+	display: flex
+	flex-wrap: wrap
+	box-shadow: 0 3px 8px rgba(2, 2, 3, 0.07)
+	border-radius: 2px
+	background-color: #fff
+	margin: 0 15px 10px 0
+	padding: 25px 30px
+	&__text
+		flex-grow: 1
+		font-family: 'Roboto-Light'
+		font-size: 14px
+		color: #8a8c8d
+		margin: 0
+		letter-spacing: 0.35px
+		&:nth-child(3)
+			width: 14%
+			text-align: center
+		&:nth-child(4)
+			text-align: right
+		&:nth-child(5)	
+			text-align: right	
+
+.coin-game
+	margin: 0 15px 10px 0
+	display: flex
+	justify-content: space-between
+	position: relative
+	&__action
+		width: calc(50% - 5px)
+		border-radius: 3px
+		overflow: hidden
+		text-align: center
+		padding-top: 36px
+		&--orange
+			background-image: linear-gradient(86deg, #f5983d 0%, #f67e3d 100%)
+			.coin-game__button
+				box-shadow: 0 12px 21px rgba(2, 2, 3, 0.19)
+				border-radius: 2px
+				background-color: #f4994d	
+				padding: 16px 22px
+				text-align: center
+				text-decoration: none
+				color: #fbfbfb	
+				font-family: 'MyriadPro-Bold'
+				font-size: 14px
+				line-height: 24px
+				letter-spacing: 1.4px
+				position: relative
+				margin: auto
+				animation: shake 2s infinite ease-in-out
+				animation-delay: .6s
+				transition: .3s
+				&:hover
+					background-color: darken(#f4994d, 10%)
+				&:before
+					content: ''
+					position: absolute
+					left: -178px
+					top: -90px
+					border-radius: 40%
+					height: 226px
+					width: 465px
+					opacity: .8
+					animation: pulse 2s infinite ease-in-out
+					animation-delay: .6s
+					z-index: -2
+					background: #f78b41
+					
+				&:after
+					content: ''
+					position: absolute
+					left: -76px
+					top: -64px
+					border-radius: 40%
+					height: 178px
+					width: 262px
+					background: #f79444
+					animation: pulse 2s infinite ease-in-out
+					animation-delay: .2s
+					opacity: .7
+					z-index: -3
+		&--blue
+			background-image: linear-gradient(-87deg, #3265d4 0%, #2952ad 100%)
+			.coin-game__button
+				box-shadow: 0 12px 21px rgba(2, 2, 3, 0.19)
+				border-radius: 2px
+				background-color: #3669d9
+				padding: 16px 22px
+				text-align: center
+				text-decoration: none
+				color: #fbfbfb	
+				font-family: 'MyriadPro-Bold'
+				font-size: 14px
+				line-height: 24px
+				letter-spacing: 1.4px
+				position: relative
+				margin: auto
+				animation: shake 2s infinite ease-in-out
+				animation-delay: .6s
+				transition: .3s
+				&:hover
+					background-color: darken(#3669d9, 10%)
+				&:before
+					content: ''
+					position: absolute
+					left: -178px
+					top: -90px
+					border-radius: 40%
+					height: 226px
+					width: 465px
+					opacity: .8
+					animation: pulse 2s infinite ease-in-out
+					animation-delay: .6s
+					z-index: -2
+					background: #2e5bb8
+				&:after
+					content: ''
+					position: absolute
+					left: -76px
+					top: -64px
+					border-radius: 40%
+					height: 178px
+					width: 262px
+					background: #3162c1
+					animation: pulse 2s infinite ease-in-out
+					animation-delay: .2s
+					opacity: .7
+					z-index: -3
+	&__eye
+		position: absolute
+		top: 0
+		bottom: 0
+		left: 0
+		right: 0
+		z-index: 10
+		margin: auto
+		width: 42px
+		height: 42px
+		border-radius: 50px
+		box-shadow: 0 3px 8px rgba(0, 0, 0, 0.07)
+		background-color: #fff
+		cursor: pointer
+		transition: .3s
+		&:hover
+			background-color: darken(#fff, 10%)
+		i
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			margin: auto
+	&__left
+		width: calc(50% - 5px)
+		border-radius: 3px
+		box-shadow: 0 3px 8px rgba(2, 2, 3, 0.07)
+		background-color: #fcfdff
+		padding: 10px 25px 10px 10px
+		display: flex
+		align-items: center
+		.coin-game__box
+			margin: 0 10px 0 0
+			i
+				left: 0
+				right: auto	
+				border-radius: 50%
+		.coin-game__avatar	
+			margin: 0 0 0 49px
+	&__right	
+		width: calc(50% - 5px)	
+		border-radius: 3px
+		box-shadow: 0 3px 8px rgba(2, 2, 3, 0.07)
+		background-color: #fcfdff
+		padding: 10px 10px 10px 25px
+		display: flex
+		align-items: center
+		justify-content: flex-end
+		.coin-game__name
+			margin-left: 5px
+	&__wrap
+		display: flex
+		flex-wrap: wrap	
+		align-items: center
+	&__wrap2
+		display: flex
+		flex-wrap: wrap	
+		align-items: center	
+	&__name
+		font-family: 'Roboto-Bold'
+		font-size: 13px
+		line-height: 24px
+		color: #525456
+		letter-spacing: 0.33px
+		margin: 0
+	&__text
+		font-family: 'Roboto-Bold'
+		font-size: 13px
+		color: rgba(#525456, .45)
+		letter-spacing: 0.33px
+		margin: 0 5px 
+	&__value
+		color: #ffa542
+		font-family: 'MyriadPro-Bold'
+		font-size: 18px
+		letter-spacing: 1px
+		margin: 0
+		span
+			font-family: "MyriadPro"
+			font-size: 10px
+			line-height: 24px
+			text-transform: uppercase
+			letter-spacing: 2px
+	&__box
+		display: flex
+		align-items: center
+		position: relative
+		padding: 10px 0
+		margin-left: 10px
+		i
+			position: absolute
+			top: 0
+			bottom: 0
+			right: 0
+			margin: auto
+			border-radius: 50%
+	&__avatar	
+		max-width: 54px
+		width: 100%	
+		margin-right: 49px
+		border-radius: 50%
+
+.coin-game-history
+	&__item
+		display: flex
+		box-shadow: 0 3px 8px rgba(2, 2, 3, 0.07)
+		border-radius: 3px
+		background-color: #ffffff
+		padding: 10px
+		margin: 0 15px 10px 0
+		&:last-child
+			margin: 0 15px 0 0
+	&__left
+		display: flex
+		flex: 1 0
+		align-items: center
+	&__right
+		width: 70px
+		display: flex
+		align-items: center
+		justify-content: flex-end
+	&__name
+		font-family: 'Roboto-Bold'
+		font-size: 13px
+		line-height: 24px
+		color: #525456
+		letter-spacing: 0.33px
+		margin: 0
+	&__wrap
+		display: flex
+		flex-wrap: wrap	
+		align-items: center	
+	&__text
+		font-family: 'Roboto-Bold'
+		font-size: 13px
+		line-height: 24px
+		color: rgba(#525456, .45)
+		letter-spacing: 0.33px
+		margin: 0 5px 
+	&__value
+		color: #ffa542
+		font-family: 'MyriadPro-Bold'
+		font-size: 18px
+		line-height: 24px
+		letter-spacing: 1px
+		margin: 0
+		span
+			font-family: "MyriadPro"
+			font-size: 10px
+			line-height: 24px
+			text-transform: uppercase
+			letter-spacing: 2px	
+	&__box		
+		display: flex
+		align-items: center
+		position: relative
+		padding: 10px 0
+		margin-right: 10px
+		i
+			position: absolute
+			top: 0
+			bottom: 0
+			left: 0
+			margin: auto	
+			z-index: 10
+	&__winner
+		max-width: 54px
+		width: 100%	
+		margin-left: 49px
+		border-radius: 50%
+		position: relative
+		z-index: 5
+	&__loser	
+		max-width: 54px
+		width: 100%	
+		margin-left: -7px
+		border-radius: 50%		
+		opacity: .3
+	&__see
+		width: 42px
+		height: 42px
+		display: inline-block
+		position: relative
+		border-radius: 50px
+		background-color: #dedfe2	
+		transition: .3s
+		&:hover
+			background-color: darken(#dedfe2, 10%)
+		i	
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			margin: auto
+
+//
+// Jackpot page
+//
+
+.winners
+	position: relative
+	padding: 23px 0
+	margin-bottom: 30px
+	background: #fff url('../img/game-pattern.png') no-repeat center center / cover		
+	&__title
+		font-size: 16px
+		text-align: center
+		color: #3e4043
+		font-family: 'MyriadPro-Bold'
+		text-transform: uppercase
+		margin: 0 0 20px
+	&__game	
+		position: absolute
+		top: 28px
+		font-size: 11px
+		display: block
+		right: 60px
+		color: #545c63
+	&__slider
+		max-width: 692px
+		width: 100%
+		margin: auto
+		&-item	
+			background: #fff
+			border-radius: 5px
+			min-width: 90px
+			max-width: 90px
+			display: inline-block
+			border-bottom: 3px solid #d7c545
+			text-align: center
+			box-shadow: 0 7px 13px rgba(2, 2, 3, 0.09)
+			padding: 13px 0 12px 0
+			margin: 0 5px
+			&--blue
+				border-bottom: 3px solid #34a0db
+			&--green
+				border-bottom: 3px solid #31d062
+			&--gray
+				border-bottom: 3px solid #cecece		
+		&-avatar
+			max-width: 50px
+			width: 100%
+			margin: auto
+			border-radius: 50%
+			background-color: #ededed
+			border: none
+		&-percent	
+			display: block
+			font-family: 'Roboto-Light'
+			font-size: 14px
+			margin-top: 14px
+			text-transform: uppercase
+			color: #686a6c
+			text-decoration: none
+
+.choose-winner
+	position: relative
+	padding: 25px 0
+	margin-bottom: 30px
+	background: #fff url('../img/game-pattern.png') no-repeat center center / cover		
+	&__title
+		font-size: 16px
+		text-align: center
+		color: #3e4043
+		font-family: 'MyriadPro-Bold'
+		text-transform: uppercase
+		margin: 0 0 15px
+	&__game	
+		position: absolute
+		top: 28px
+		font-size: 11px
+		display: block
+		right: 60px
+		color: #545c63
+	&__slider
+		max-width: 760px
+		width: 100%
+		margin: 0 auto 20px
+		position: relative
+		&:after
+			position: absolute
+			top: 0px
+			left: 0
+			z-index: 551
+			height: 100%
+			z-index: 12
+			width: 72px
+			content: ''
+			box-shadow: 45px 0px 45px rgba(254, 254, 254, .9) inset
+		&:before
+			position: absolute
+			top: 0
+			right: 0
+			height: 100%
+			z-index: 12
+			width: 72px
+			content: ''
+			box-shadow: -45px 0px 45px rgba(254, 254, 254, .9) inset
+		&-item	
+			border-radius: 5px
+			max-width: 72px
+			width: 100%
+			display: inline-block
+			margin: 0 2px
+			position: relative
+		&-avatar
+			max-width: 100%
+			width: 100%
+			margin: auto
+	&__point
+		height: 18px
+		text-align: center
+		i	
+			display: inline-block
+				
+.winner
+	position: relative
+	padding: 11px 0 
+	margin-bottom: 20px
+	background: #fff url('../img/game-pattern.png') no-repeat center center / cover		
+	border-bottom: 3px solid #fba241
+	&__title
+		font-size: 16px
+		text-align: center
+		color: #3e4043
+		font-family: 'MyriadPro-Bold'
+		text-transform: uppercase
+		margin: 0
+	&__wrap
+		display: flex
+		align-items: center	
+		justify-content: center
+		flex-wrap: wrap
+	&__left
+		background-color: #f6e1cc
+		border-radius: 50%
+		text-align: center
+		width: 150px
+		height: 150px
+	&-circle	
+		padding: 42px 20px 0 20px
+		&__text
+			font-size: 12px
+			text-transform: uppercase
+			color: #666
+			letter-spacing: 0.3px
+			margin: 0 0 16px
+			line-height: 18px
+			font-family: 'Roboto-Light'
+		&__numbers		
+			color: #f8a54d
+			font-size: 18px
+			line-height: 18px
+			display: block
+			font-family: 'MyriadPro-Bold'
+			position: relative
+	&__right
+		background-color: #dfffe7
+		border-radius: 50%
+		text-align: center
+		width: 150px
+		height: 150px
+		.winner-circle__numbers
+			color: #35c958
+			i
+				position: absolute
+				top: 0
+				left: 7px
+	&__center
+		margin: 0 65px
+		&-top
+			display: flex
+			justify-content: center
+			margin-bottom: 15px
+	&__name
+		font-family: 'Roboto-Bold'
+		font-size: 15px
+		line-height: 24px
+		color: #525456
+		letter-spacing: .33px
+		margin: 0
+	&__avatar
+		max-width: 94px
+		height: 94px
+		width: 100%
+		position: relative
+		display: block
+		border-radius: 50%
+		margin-right: 30px
+		&:after
+			position: absolute
+			content: ''
+			bottom: 0
+			left: 0
+			width: 84px
+			height: 84px
+			border-radius: 50%
+			border: 5px solid #ff7f41
+		img
+			max-width: 100%	
+			width: 100%
+			border-radius: 50%
+	&__value	
+		font-size: 36px
+		font-family: 'MyriadPro-Bold'
+		color: #ffa542
+		line-height: 27px
+		text-align: right
+		margin: 0
+		span
+			font-size: 12px
+			font-family: 'MyriadPro'
+			display: block
+			letter-spacing: 2px
+	&__hash		
+		font-family: 'Roboto-Light'
+		font-size: 14px
+		line-height: 18px
+		color: #656565
+		letter-spacing: .35px
+		margin: 0
+		a
+			color: #656565
+
+.jackpot-timer
+	margin-bottom: 30px
+	&__wrap
+		max-width: 80%
+		width: 100%
+		margin: auto
+		display: flex
+		justify-content: center
+		align-items: center
+	&__left
+		width: 100%
+		height: 1px
+		background: #d9dcdf
+		position: relative
+		span
+			position: absolute
+			left: 0
+			top: 0
+			width: 40%
+			height: 1px
+			background: #3293e0
+			box-shadow:  0px 10px 16px 0px #3293e0
+	&__right
+		width: 100%
+		height: 1px
+		background: #d9dcdf
+	&__center	
+		text-align: center
+		padding: 0 15px
+	&__title
+		font-size: 13px
+		color: #525868
+		letter-spacing: 1.3px
+		font-family: 'Roboto-Light'
+		margin: 0 0 10px
+	&__time
+		font-size: 36px
+		letter-spacing: 3.4px
+		line-height: 29px
+		font-family: 'Roboto-Light'
+		margin: 0
+
+		span
+			font-size: 18px
+
+.jackpot-history
+	padding: 0 30px
+	.nano>.nano-pane 
+		right: 0
+	.nano > .nano-pane > .nano-slider
+		background: #dcdcdc	
+	&__wrapper
+		height: 500px
+	&__wrapper
+	&__wrap
+		flex: 1 0
+	&-top
+		display: flex
+		align-items: center
+		border-radius: 2px
+		padding: 3px 20px 3px 5px
+		margin: 0 15px 15px 0
+		box-shadow: 0 8px 21px rgba(52, 115, 251, 0.11)
+		background: url('../img/time-out-bg.png') no-repeat center center / cover
+	&__img
+		margin-right: 30px
+	&__title
+		color: #fff
+		text-transform: uppercase
+		font-size: 14px
+		font-family: 'MyriadPro-Bold'
+		letter-spacing: 1.4px
+		margin: 0 0 9px
+	&__hint	
+		font-size: 11px
+		color: #fff
+		margin: 0
+	&__hash
+		font-size: 11px
+		color: #b0bcdd
+		margin: 0
+		a			
+			color: #fff
+			text-decoration: none
+	&-bottom
+		padding: 3px 30px
+		display: flex
+		align-items: center
+		justify-content: space-between
+		flex-wrap: wrap
+		border-radius: 2px
+		margin-right: 15px
+		box-shadow: 0 8px 21px rgba(52, 115, 251, 0.11)
+		background: url('../img/new-game-bg.png') no-repeat center center / cover
+		&__left
+			display: flex
+			align-items: center
+		&__right
+			text-align: right	
+	&__button
+		color: #fff
+		text-align: center
+		display: block
+		padding: 14px 0 13px 0
+		text-transform: uppercase
+		border: 1px solid #688ee3
+		border-radius: 2px
+		width: 154px
+		transition: 0.3s
+		font-family: 'MyriadPro-Bold'
+		font-size: 13px		
+		cursor: pointer
+		&:hover
+			text-decoration: none
+			opacity: 0.8
+	&__list
+		margin-right: 15px
+	&__item	
+
+.history-item
+	position: relative
+	box-shadow: 0 2px 5px rgba(2, 2, 3, 0.08)
+	border-radius: 2px
+	margin-bottom: 13px
+	padding: 14px 40px
+	background: #fff
+	display: flex
+	align-items: center
+	justify-content: space-between
+	overflow: hidden
+	&:before
+		position: absolute
+		top: 0
+		left: 0
+		bottom: 0px
+		width: 3px
+		content: ''
+	&--green
+		&:before
+			background-image: linear-gradient(to top, #31d061 0%, #0fc379 100%)
+	&--blue
+		&:before
+			background-image: linear-gradient(to top, #34aae1 0%, #2e58ad 100%)
+	&--yellow
+		&:before
+			background-image: linear-gradient(4deg, #dfea35 0%, #d7c446 100%)
+	&__left
+		display: flex
+		align-items: center
+	&__right	
+		text-align: right	
+	&__wrap
+		flex: 1 0
+	&__avatar	
+		max-width: 48px
+		width: 100%
+		border-radius: 50%
+		margin-right: 20px
+	&__name
+		font-size: 13px
+		font-family: 'Roboto-Bold'
+		color: #3e4043
+		margin: 0 0 5px 
+	&__value
+		font-size: 16px
+		color: #ffaf3b
+		font-family: 'MyriadPro-Bold'
+		margin: 0 0 7px
+		span
+			font-size: 10px
+			letter-spacing: 2px
+			font-family: 'MyriadPro'
+	&__percent
+		font-size: 24px
+		font-family: 'Roboto-Light'
+		letter-spacing: 0.6px
+		margin: 0 0 7px
+	&__range
+		color: #a5a5a5
+		font-size: 13px
+		margin: 0
+		padding-left: 30px
+		position: relative
+		i
+			position: absolute
+			top: 0
+			left: 0
+			bottom: 0
+			margin: auto
+
+//
+// Daily bonus page
+//
+
+.starting
+	text-align: center
+	background: #fff
+	padding: 41px 20px 36px
+	background: #fff
+	box-shadow: 0 3px 8px rgba(2, 2, 3, 0.06)
+	&__title
+		font-family: 'MyriadPro-Bold'
+		font-size: 24px
+		line-height: 20px
+		color: #3e4043
+		letter-spacing: 1.8px
+		margin: 0 0 20px
+	&__text	
+		font-family: 'Roboto-Light'
+		font-size: 14px
+		line-height: 20px
+		max-width: 630px
+		width: 100%
+		margin: auto
+		color: #8a8b8d
+		letter-spacing: 1.05px	
+
+.hint
+	display: flex
+	align-items: center
+	box-shadow: 0 3px 7px rgba(2, 2, 3, 0.08)
+	border-radius: 3px
+	background-color: #ffffff
+	padding: 15px 10px 15px 10px
+	margin-bottom: 15px
+	&__icon
+		width: 34px
+		height: 34px
+		background-color: #fee6e4
+		border-radius: 50%
+		text-align: center
+		font-family: 'MyriadPro-Bold'
+		font-size: 18px
+		line-height: 34px
+		color: #ff5245
+		margin-right: 16px
+	&__wrap
+		flex: 1 0
+	&__title
+		font-family: 'MyriadPro-Bold'
+		font-size: 16px
+		line-height: 24px
+		color: #ff5245
+		letter-spacing: 0.8px
+		margin: 0
+	&__text			
+		font-family: 'Roboto-Light'
+		font-size: 14px
+		line-height: 24px
+		color: #606060
+		letter-spacing: 0.7px
+		margin: 0
+
+.get-bonus
+	border-radius: 3px
+	margin-bottom: 15px
+	&__body
+		height: 180px
+		position: relative
+		text-align: center
+		overflow: hidden
+		background: url('../img/roulette-blur.png') no-repeat center center / cover
+	&__bottom	
+		background-color: #eaebec
+		display: flex
+		align-items: center
+		flex-wrap: wrap
+		justify-content: center
+		padding: 30px 0
+	&__info
+		font-family: 'MyriadPro-Bold'
+		font-size: 16px
+		line-height: 24px
+		color: #aab1ad
+		letter-spacing: 0.8px
+		margin: 0
+	&__timer
+		font-size: 18px
+		line-height: 24px
+		font-family: 'MyriadPro-Bold'
+		color: #676867
+		letter-spacing: 0.9px
+		margin: 0 0 0 10px
+		span
+			font-family: 'MyriadPro'
+	&__button
+		display: inline-block
+		border-radius: 50%
+		width: 169px
+		text-decoration: none
+		height: 169px
+		padding-top: 63px
+		box-shadow: 0 0 13px rgba(255, 184, 58, 0.17)
+		background-color: #ffb83a
+		margin: 7px auto 0px auto
+		opacity: 1
+		animation: shake 2s infinite ease-in-out
+		animation-delay: .6s
+		z-index: 12			
+		text-transform: uppercase
+		text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.11), 0 0 13px rgba(255, 255, 255, 0.11);
+		color: #ffffff
+		font-family: 'MyriadPro-Bold'
+		font-size: 18px
+		line-height: 24px
+		letter-spacing: 0.9px
+		position: relative
+		transition: .3s
+		&:hover
+			background-color: darken(#ffb83a, 10%)
+		&:before
+			content: ''
+			position: absolute
+			left: 50%
+			bottom: 0
+			top: 0
+			background: #ffbe4b url('../img/daily-bonus-items-bg.png') no-repeat center center
+			border-radius: 50%
+			animation: pulse 3s infinite ease-in-out
+			margin: auto 0 auto -212px
+			height: 434px
+			width: 412px
+			opacity: .5
+			animation-delay: .6s
+			z-index: -2
+		&:after
+			content: ''
+			position: absolute
+			left: 50%
+			bottom: 0
+			top: 0
+			background: #ffbe4b url('../img/daily-bonus-items-bg.png') no-repeat center center
+			border-radius: 50%
+			animation: pulse 3s infinite ease-in-out	
+			margin: auto 0 auto -145px
+			height: 300px
+			width: 286px
+			animation-delay: .2s
+			opacity: .25
+			z-index: -3
+
+.disabled-bonus__button
+	display: inline-block
+	border-radius: 50%
+	width: 169px
+	text-decoration: none
+	height: 169px
+	padding-top: 63px
+	box-shadow: 0 0 13px rgba(255, 184, 58, 0.17)
+	background-color: #c7c8c8
+	margin: 7px auto 0px auto
+	opacity: 1	
+	text-transform: uppercase
+	text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.11), 0 0 13px rgba(255, 255, 255, 0.11);
+	color: #ffffff
+	font-family: 'MyriadPro-Bold'
+	font-size: 18px
+	line-height: 24px
+	letter-spacing: 0.9px
+
+.bonus
+	background: #fff
+	padding: 35px 0px 40px
+	box-shadow: 0 3px 7px rgba(2, 2, 3, 0.08)
+	border-radius: 3px
+	&__slider
+		position: relative
+		margin-bottom: 15px
+		&:before
+			position: absolute
+			content: ''
+			width: 80px
+			z-index: 10
+			height: 100%
+			top: 0px
+			left: 0
+			box-shadow: 60px 0px 59px rgba(254, 254, 254, .9) inset
+		&:after
+			position: absolute
+			content: ''
+			width: 80px
+			height: 100%
+			top: 0px
+			z-index: 10
+			right: 0
+			box-shadow: -60px 0px 59px rgba(254, 254, 254, .9) inset	
+	&__point
+		height: 18px
+		text-align: center
+		i	
+			display: inline-block
+
+.bonus-item
+	text-align: center
+	border-radius: 6px
+	background-color: #f2f5f7
+	min-width: 76px
+	min-height: 76px
+	margin: 0px 4px
+	overflow: hidden
+	&__value
+		font-family: 'MyriadPro-Bold'
+		font-size: 24px
+		line-height: 24px
+		letter-spacing: 1.2px
+		margin: 16px 0 10px
+		display: block
+		color: #9fa2a4
+	&__coins
+		display: block	
+		color: #fff
+		font-family: "MyriadPro"
+		font-size: 9px
+		background-color: #afb0b1
+		line-height: 24px
+		text-transform: uppercase
+		letter-spacing: 4.5px
+		padding-top: 2px
+		margin-bottom: 0
+	&--green
+		background-color: #a5e2bf
+		.bonus-item__value
+			color: #15a656	
+		.bonus-item__coins
+			background-color: #15a656	
+	&--yellow
+		background-color: #eedec2
+		.bonus-item__value
+			color: #e19612	
+		.bonus-item__coins
+			background-color: #ffb83a
+	&--blue
+		background-color: #b0c2ed
+		.bonus-item__value
+			color: #3872f0	
+		.bonus-item__coins
+			background-color: #3265d4
+	&--orange
+		background-color: #f9c99c
+		.bonus-item__value
+			color: #e38542	
+		.bonus-item__coins
+			background-color: #e38542
+	&--lose
+		background: #f2f5f7 url('../img/icons/sad-smile.png')  no-repeat				
+
+//
+// Help page
+//
+
+.answers	
+.answer
+	box-shadow: 0 3px 8px rgba(2, 2, 3, 0.07)
+	border-radius: 3px
+	margin-bottom: 5px
+	&__top
+		padding: 20px 55px 20px 20px
+		border-radius: 3px
+		background-color: #ffffff
+		position: relative
+		cursor: pointer
+	&__arrow
+		height: 8px
+		width: 8px
+		display: block
+		border: 2px solid #b5bac2
+		border-right-width: 0
+		border-top-width: 0
+		transform: rotate(-45deg)
+		position: absolute
+		right: 20px
+		top: 26px
+		transition: .3s
+		&--active
+			transform: rotate(135deg)
+	&__body
+		background-color: #f3f4f6
+		padding: 10px 15px
+		overflow: hidden
+		display: none
+	&__title
+		font-family: 'Roboto-Bold'
+		font-size: 14px
+		line-height: 24px
+		color: #88898b
+		letter-spacing: 0.7px
+		margin: 0
+	&__text	
+		font-family: 'Roboto-Light'
+		font-size: 14px
+		line-height: 24px
+		color: #7a7a7c
+		letter-spacing: 0.35px		
+
+//
+// Profile page
+//
+
+.referral
+	margin: 0 15px 10px 0
+	&__title
+		font-family: 'MyriadPro-Bold'
+		font-size: 16px
+		line-height: 18px
+		color: #3e4043
+		letter-spacing: 0.4px
+		margin: 0 0 20px
+		padding-left: 20px
+	&__wrap
+		display: flex
+		justify-content: space-between
+	&__left
+		width: calc(50% - 5px)
+		display: flex
+		flex-direction: column
+	&__right
+		width: calc(50% - 5px)			
+
+.ref-level
+	box-shadow: 0 3px 8px rgba(2, 2, 3, 0.07)
+	border-radius: 3px
+	background-color: #fff
+	padding: 24px 15px 10px 15px
+	margin-bottom: 10px
+	flex: 1
+	&__top
+		display: flex
+		justify-content: space-between
+		align-items: center
+		margin-bottom: 10px
+	&__level
+		font-family: 'Taile-Bold'
+		font-size: 16px
+		line-height: 24px
+		text-transform: uppercase
+		color: #f6cd3d
+		letter-spacing: 0.4px
+		margin: 0
+	&__exp
+		font-family: 'Taile'
+		font-size: 14px
+		color: #f6473d
+		line-height: 24px
+		letter-spacing: 0.35px
+		margin: 0
+		text-transform: uppercase
+		span
+			color: #aaadae
+	&__timeline
+		border-radius: 2px
+		height: 8px
+		background-image: linear-gradient(to right, #f6e43d 0%, #f63d3d 100%)
+		position: relative
+		margin-bottom: 10px
+		span
+			position: absolute
+			right: 0
+			top: 0
+			height: 100%
+			display: block
+			width: 40%
+			background-color: #edeeef
+	&__text
+		font-family: 'Roboto-Light'
+		font-size: 14px
+		line-height: 18px
+		color: #8a8c8d
+		letter-spacing: 0.35px
+		margin: 0
+
+.ref-value
+	box-shadow: 0 3px 8px rgba(2, 2, 3, 0.07)
+	border-radius: 3px
+	background-color: #fff
+	display: flex
+	justify-content: space-between
+	align-items: center
+	padding: 25px
+	&__text
+		font-family: 'Roboto-Light'
+		font-size: 14px
+		line-height: 18px
+		color: #6e6f71
+		letter-spacing: 0.35px
+	&__link		
+		font-family: 'MyriadPro-Bold'
+		font-size: 18px
+		color: #7d7f83
+		letter-spacing: 0.45px	
+		background-color: #f1f4f7	
+		line-height: 49px
+		height: 49px
+		padding: 0 15px
+		border-radius: 2px
+		display: inline-block
+		cursor: pointer
+		text-decoration: none
+		text-align: center
+		text-transform: uppercase
+		max-width: 124px
+		width: 100%
+		transition: .3s
+		&:hover
+			background-color: darken(#f1f4f7, 7%) 
+
+.ref-link
+	box-shadow: 0 3px 8px rgba(2, 2, 3, 0.07)
+	border-radius: 3px
+	background-color: #fff
+	position: relative
+	text-align: center
+	padding: 15px 25px 25px
+	&__promo
+		margin-bottom: 15px
+		display: flex
+		align-items: center
+		justify-content: center
+		flex-wrap: wrap
+		&-field
+			border: 2px solid #d2d3d4
+			outline: 0
+			font-size: 18px
+			color: #5c5f65
+			font-family: MyriadPro
+			padding: 0 10px
+			height: 46px
+			line-height: 46px
+			margin-right: 10px
+			max-width: 210px
+			width: 100%
+			margin: 3px 2px
+			background: transparent
+		&-button
+			border: 0
+			outline: none
+			height: 46px
+			line-height: 46px	
+			margin: 3px 2px
+	&__help
+		max-width: 268px
+		width: 100%
+		margin-bottom: 15px
+		display: inline-block
+		height: 46px
+		border-radius: 2px
+		background-color: #f1f4f7
+		line-height: 46px
+		font-family: 'Roboto-Bold'
+		font-size: 18px
+		color: #7d7f83
+		letter-spacing: 0.45px
+		text-align: center
+		cursor: pointer
+		transition: .3s
+		&:hover
+			background-color: darken(#f1f4f7, 7%) 
+	&__title
+		font-family: 'Roboto-Light'
+		font-size: 14px
+		line-height: 18px
+		color: #6e6f71
+		letter-spacing: 0.35px
+		margin: 0 0 20px
+	&__wrap
+		display: flex
+		align-items: center
+		max-width: 250px
+		width: 100%
+		margin: 0 auto 30px
+	&__percent
+		font-family: 'MyriadPro-Bold'
+		font-size: 36px
+		color: #f6bc3d
+		letter-spacing: 0.9px
+		margin: 0 15px 0 0
+	&__text
+		font-family: 'Roboto-Light'
+		font-size: 14px
+		line-height: 18px
+		color: #9da0a0
+		letter-spacing: 0.35px
+		margin: 0
+		text-align: left
+	&__link	
+		font-family: 'Roboto-Light'
+		font-size: 14px
+		line-height: 18px
+		color: #99999c
+		letter-spacing: 0.35px	
+		border-radius: 2px
+		background-color: #f1f4f7
+		padding: 10px 20px
+		display: inline-block
+		cursor: pointer
+		margin-bottom: 20px
+		&--hidden
+			position: absolute
+			z-index: -1
+			top: 3px
+			left: 3px
+			outline: none
+	&__stock
+		font-family: 'Roboto-Light'
+		font-size: 14px
+		line-height: 18px
+		color: #9da0a0
+		letter-spacing: 0.35px
+		max-width: 270px
+		margin: 0 auto
+
+.history
+	&__top
+		display: flex
+		justify-content: space-between
+		align-items: center
+		padding: 20px 0 20px 20px
+		margin-right: 15px
+	&__link
+		font-family: 'MyriadPro-Bold'
+		font-size: 16px
+		line-height: 18px
+		color: #bebebe
+		letter-spacing: 0.4px
+		display: inline-block
+		text-decoration: none
+		cursor: pointer
+		&--active
+			color: #3e4043
+	&__help
+		font-size: 14px
+		color: #737678
+		letter-spacing: .35px
+		position: relative
+		padding-left: 30px
+		cursor: pointer	
+		margin: 0
+		i
+			position: absolute
+			top: 0
+			left: 0
+			margin: auto
+	&__list
+		margin-right: 15px
+	&__item	
+		margin-bottom: 10px
+		&:last-child
+			margin-bottom: 0
+	&__body
+		height: 500px
+		display: none
+		animation: fadeEffect .5s
+		&--active
+			display: block
+	.nano>.nano-pane 
+		right: 0
+	.nano > .nano-pane > .nano-slider
+		background: #dcdcdc			
+
+
+@keyframes fadeEffect 
+    from 
+        opacity: 0
+    to 
+        opacity: 1	
+.hist-balance
+	box-shadow: 0 3px 8px rgba(2, 2, 3, 0.07)
+	border-radius: 3px
+	background-color: #fff
+	padding: 37px 25px
+	display: flex
+	justify-content: space-between
+	align-items: center
+	&--game
+		.hist-balance__data
+			margin-left: 0
+		.hist-balance__sum
+			margin: 0 30px 0 0 	
+	&--green
+		.hist-balance__sum
+			color: #33be53
+	&--yellow
+		.hist-balance__sum
+			color: #f6bc3d
+	&--red
+		.hist-balance__sum
+			color: #fa5f5f	
+	&__left
+		display: flex
+		justify-content: space-between
+		align-items: center
+	&__right
+		display: flex
+		justify-content: space-between
+		align-items: center
+	&__sum
+		font-family: 'MyriadPro-Bold'
+		font-size: 16px
+		line-height: 18px
+		letter-spacing: 0.4px
+		position: relative
+		margin: 0
+		padding-left: 60px
+		i
+			position: absolute
+			top: 0
+			bottom: 0
+			left: 0
+			margin: auto
+	&__game
+		font-family: 'MyriadPro-Bold'
+		font-size: 16px
+		line-height: 18px
+		color: #6e6f71
+		letter-spacing: 0.35px	
+		margin: 0	
+		text-transform: uppercase
+	&__source
+		font-family: 'Roboto-Light'
+		font-size: 14px
+		line-height: 18px
+		color: #6e6f71
+		letter-spacing: 0.35px
+		margin: 0
+		&--user
+			border-radius: 3px
+			background-color: #f1f4f7
+			padding: 8px 18px 8px 40px
+			font-family: 'Roboto-Light'
+			font-size: 14px
+			line-height: 18px
+			color: #a9a9a9
+			letter-spacing: 0.35px
+			margin: 0
+			position: relative
+			span
+				color: #3f4042
+			i	
+				position: absolute
+				top: 0
+				bottom: 0
+				left: 18px
+				margin: auto
+	&__data	
+		font-family: 'Roboto-Light'
+		font-size: 14px
+		line-height: 18px
+		color: #9da0a0
+		letter-spacing: 0.35px	
+		margin: 0 0 0 95px	
+	
+
+//
+// 404 page
+//
+
+.error
+	box-shadow: 0 3px 8px rgba(2, 2, 3, 0.07)
+	border-radius: 50%
+	background-color: #fff
+	text-align: center
+	width: 550px
+	height: 550px
+	margin: auto
+	position: absolute
+	top: 50%
+	left: 0
+	right: 0
+	transform: translateY(-50%)
+	padding: 60px 20px 0
+
+	&__number
+		font-family: 'MyriadPro-Bold'
+		font-size: 150px
+		color: #3e4043
+		margin: 0 0 15px
+	&__title
+		font-family: 'MyriadPro-Bold'
+		font-size: 40px
+		color: #3e4043
+		margin: 0 0 20px
+	&__text
+		font-size: 18px
+		line-height: 28px
+		color: #55575b
+		margin: 0 0 20px
+	&__link			
+
+//
+// Modal
+//
+
+.modal
+	box-shadow: 0 4px 59px rgba(2, 2, 3, 0.17)
+	&__top
+		text-align: center
+		position: relative
+		padding: 25px 0
+		&:after
+			position: absolute
+			content: ''
+			top: 100%
+			left: 30px
+			right: 30px
+			height: 2px
+			background-color: #e9e9e9
+	&__close
+		position: absolute
+		top: 21px
+		right: 20px		
+		padding: 10px
+		cursor: pointer
+	&__body
+		padding: 20px 0
+	&__title
+		font-family: 'MyriadPro-Bold'
+		font-size: 16px
+		line-height: 24px
+		color: #38393b
+		text-transform: uppercase
+		letter-spacing: 1.6px	
+		margin: 0
+	&__buttons
+		text-align: center
+		padding: 30px
+		.button
+			margin: 0 3px
+			max-width: 154px
+			width: 100%
+	&--conclusion	
+		.button
+			max-width: 135px
+			width: 100%
+		.button--wide
+			max-width: 184px
+			width: 100%		
+	&--bet
+		.modal__body
+			padding: 20px 30px			
+		.conclusion__balance
+			margin: 0 0 20px
+	&--help		
+		.modal__body
+			padding: 20px 30px
+	&-help
+		height: 300px
+	&-chat
+		height: 300px
+	&-hash
+		text-align: center
+		padding: 0 30px
+		&__text
+			font-family: Roboto-Light
+			font-size: 14px
+			line-height: 18px
+			color: #656565
+			letter-spacing: .35px
+			margin: 10px 0 0 
+
+
+
+//
+// Modal conclusion
+//		
+
+.output-box
+	margin: 0 30px 20px
+	&__top
+		display: flex
+		align-items: center	
+		margin-bottom: 10px
+	&__bottom	
+		display: flex
+		align-items: center
+	&__text
+		font-family: Roboto-Light
+		font-size: 16px
+		color: #656565
+		letter-spacing: .35px
+		margin: 0
+		width: 97px
+		&--two
+			width: 105px
+	&__field
+		border: 2px solid #d2d3d4
+		outline: none
+		font-size: 18px
+		color: #5c5f65
+		font-family: MyriadPro
+		padding: 5px 10px
+		margin-right: 10px	
+		max-width: 82px
+		width: 100%
+	&__requisites
+		font-size: 15px
+		color: #737678
+		letter-spacing: .38px
+		margin: 0
+	&__hint	
+		font-family: Roboto-Light
+		font-size: 13px
+		line-height: 24px
+		color: #656565
+		letter-spacing: .35px	
+		margin: 0
+.output-radio	
+	display: block
+	position: relative
+	padding-left: 35px
+	margin-bottom: 12px
+	cursor: pointer
+	user-select: none
+	width: 120px
+	height: 60px
+	input
+		position: absolute
+		opacity: 0
+		cursor: pointer
+	&__box
+		position: absolute
+		top: 0
+		left: 0
+		margin: auto
+		width: 100%
+		height: 100%
+		i
+			position: absolute
+			top: 0
+			left: 0
+			bottom: 0
+			right: 0
+			margin: auto
+		
+.output-radio input:checked ~ .output-radio__box		
+	box-shadow: 0 4px 59px rgba(2,2,3,.17)
+
+.output-requisites
+	display: none
+	align-items: center
+	&__text
+		font-family: 'Roboto-Light'
+		font-size: 16px
+		color: #656565
+		letter-spacing: .35px
+		margin: 0 10px 0 0
+	&__input	
+		border: 2px solid #d2d3d4
+		outline: 0
+		font-size: 18px
+		background: transparent
+		color: #5c5f65
+		font-family: 'MyriadPro'
+		padding: 5px 10px
+		width: 100%
+
+.conclusion
+	&__balance
+		border-radius: 2px
+		background-color: #f2f2f2
+		padding: 10px 15px
+		display: flex
+		flex-wrap: wrap
+		margin: 0 30px 20px
+		&-text
+			font-family: 'Roboto-Light'
+			font-size: 14px
+			line-height: 18px
+			color: #656565
+			letter-spacing: 0.35px
+			margin: 0 10px 0 0
+		&-value
+			font-size: 16px
+			font-family: 'Roboto-Light'
+			text-transform: uppercase
+			color: #f6943d
+			letter-spacing: 0.4px
+			margin: 0
+			span
+				font-size: 10px
+				letter-spacing: 2px
+		&-hash
+			font-size: 15px
+			font-family: 'Roboto-Light'
+			text-transform: uppercase
+			color: #656565
+			letter-spacing: 0.4px
+	&__where
+		background: #f2f6f9
+		padding: 25px 30px 40px
+		&-title
+			text-align: center
+			color: #3e4043
+			font-family: 'MyriadPro-Bold'
+			font-size: 16px
+			line-height: 18px
+			letter-spacing: 0.4px
+			text-transform: uppercase
+			margin: 0 0 25px
+		&-list
+			display: flex
+			justify-content: space-around
+
+	&__summ	
+		text-align: center
+		p
+			color: #3e4043
+			font-family: 'MyriadPro-Bold'
+			font-size: 16px
+			line-height: 18px
+			letter-spacing: 0.4px
+			text-transform: uppercase
+			margin: 0 0 15px
+
+.warning__balance	
+	border-radius: 2px
+	background-color: #f7e5e5
+	padding: 10px 15px
+	display: flex
+	margin-bottom: 20px
+	&-text
+		font-family: 'Roboto-Light'
+		font-size: 14px
+		line-height: 18px
+		color: #bc6363
+		letter-spacing: 0.35px
+		margin: 0 10px 0 0
+
+//
+// Modal bet
+//	
+
+.bet__form
+	display: flex
+	align-items: center
+	justify-content: center
+	padding-top: 10px
+	margin-bottom: 15px
+	&--left
+		justify-content: flex-start
+	&-sum
+		color: #b4b9c1
+		font-size: 19px
+		margin: 0 20px
+		padding-top: 20px
+	&-wrap
+		&--gray
+			.bet__form-box
+				border: 2px solid #d2d3d4
+			.bet__form-label
+				color: #d2d3d4
+			.bet__form-input
+				color: #5c5f65	
+	&-label
+		font-size: 10px
+		font-family: 'MyriadPro'
+		color: #ffa43c
+		letter-spacing: 2px
+		margin-bottom: 11px
+		text-transform: uppercase
+		display: block
+	&-box
+		border: 2px solid #ff933f
+		border-radius: 2px
+		padding: 11px 10px 9px 19px
+		position: relative
+	&-input
+		border: none
+		outline: none
+		margin: 0 17px 0 0
+		-webkit-appearance: none
+		width: 65px
+		font-size: 18px
+		text-align: center
+		background: transparent
+		color: #ffa13d
+		font-family: 'MyriadPro'
+	&-up
+		position: absolute
+		top: 9px
+		right: 5px
+		width: 15px
+		height: 15px
+		cursor: pointer
+		&:after
+			position: absolute
+			content: ''
+			top: 6px
+			left: 4px
+			width: 5px
+			height: 5px
+			border-top: 2px solid #a1a1a2
+			border-right: 2px solid #a1a1a2
+			transform: rotate(-45deg)
+		&:hover
+			&:after
+				border-top: 2px solid #ffa13d
+				border-right: 2px solid #ffa13d
+	&-down
+		position: absolute
+		bottom: 7px
+		right: 5px
+		width: 15px
+		height: 15px
+		cursor: pointer
+		&:after
+			position: absolute
+			content: ''
+			top: 3px
+			left: 4px
+			width: 5px
+			height: 5px
+			border-top: 2px solid #a1a1a2
+			border-right: 2px solid #a1a1a2
+			transform: rotate(135deg)
+		&:hover
+			&:after
+				border-top: 2px solid #ffa13d
+				border-right: 2px solid #ffa13d	
+	&-text
+		font-family: Roboto-Light
+		font-size: 14px
+		color: #656565
+		letter-spacing: .35px
+		margin: 26px 15px 0 0		
+
+.bet-avatar
+	padding: 0 30px
+	text-align: center
+	&__wrap
+		position: relative
+		display: inline-block
+	&__img
+		border-radius: 50%
+		max-width: 100px
+		width: 100%
+	i		
+		position: absolute
+		top: 0
+		bottom: 0
+		left: -43px
+		margin: auto
+		border-radius: 50%
+		
+
+.disabled	
+	cursor: auto
+	pointer-events: none
+
+//
+// Modal coin create game
+//	
+
+.coin-create	
+	padding: 0 60px 30px
+	display: flex
+	justify-content: space-between
+	&__orange
+		background-color: rgba(#f0af30, .6)
+		max-width: 260px
+		width: 100%
+		height: 340px
+		position: relative
+		display: flex
+		align-items: center
+		flex-direction: column
+		justify-content: center
+		overflow: hidden
+		border-radius: 3px
+	&__icon
+		width: 110px
+		height: 110px
+		background-color: rgba(#f0af30, .73)
+		border-radius: 50%
+		position: relative
+		z-index: 1
+		cursor: pointer
+		&:after
+			content: ''
+			position: absolute
+			left: -15px
+			top: -15px
+			border-radius: 100%
+			animation: pulse 2s infinite ease-in-out
+			width: 140px
+			height: 140px
+			background-color: #f0af30
+			animation-delay: .2s
+			opacity: .25
+			z-index: -3
+		&:before	
+			content: ''
+			position: absolute
+			left: -75px
+			top: -75px
+			border-radius: 100%
+			-webkit-animation: pulse 2s infinite ease-in-out
+			animation: pulse 2s infinite ease-in-out
+			width: 260px
+			height: 260px
+			background-color: #ffc148
+			opacity: .5
+			animation-delay: .6s
+			z-index: -2
+		i
+			position: absolute
+			top: 0
+			left: 0
+			bottom: 0
+			right: 0
+			margin: auto
+			transform: scale(1.5)
+
+	&__tickets	
+		color: #fff
+		font-family: 'Roboto-Bold'
+		font-size: 18px
+		line-height: 24px
+		letter-spacing: 0.45px
+		margin: 0
+		position: absolute
+		bottom: 15px
+		left: 0
+		right: 0
+		text-align: center
+	&__center
+		text-align: center
+		display: flex
+		flex-direction: column
+		border-radius: 3px
+		background-color: #f2f2f2
+		margin: 0 25px
+		padding: 15px 20px
+		&--one
+			.coin-create__vs
+				margin: 20px 0 50px
+			.wait-palyer__bet
+				margin: 0 0 10px	
+			.wait-palyer__timer-text
+				margin: 0			
+	&__bet
+		font-family: 'Roboto-Light'
+		font-size: 16px
+		line-height: 24px
+		color: #929292
+		letter-spacing: 0.4px
+		margin: 0
+	&__vs	
+		color: #929292
+		font-family: 'Roboto-Bold'
+		font-size: 40px
+		text-transform: uppercase
+		display: block
+		margin: 15px 0
+	&__value
+		font-family: 'Roboto-Light'
+		font-size: 16px
+		line-height: 24px
+		color: #929292
+		letter-spacing: 0.4px
+		margin: 0
+	&__timer
+		margin-top: 12px
+		&-text
+			color: #f7b13a
+			font-family: 'Roboto-Light'
+			font-size: 18px
+			line-height: 24px
+			letter-spacing: 1.8px
+			margin: 0px 0 30px
+	&__blue	
+		background-color: rgba(#3884f5, .7)
+		border-radius: 3px
+		max-width: 260px
+		width: 100%
+		height: 340px
+		position: relative
+		display: flex
+		align-items: center
+		flex-direction: column
+		justify-content: center
+		overflow: hidden
+		.coin-create__icon
+			width: 110px
+			height: 110px
+			background-color: rgba(#3780f4, .23)
+			border-radius: 50%
+			position: relative
+			z-index: 1
+			&:after
+				content: ''
+				position: absolute
+				left: -15px
+				top: -15px
+				border-radius: 100%
+				animation: pulse 2s infinite ease-in-out
+				width: 140px
+				height: 140px
+				background-color: #3884f4
+				animation-delay: .2s
+				opacity: .28
+				z-index: -3
+			&:before	
+				content: ''
+				position: absolute
+				left: -75px
+				top: -75px
+				border-radius: 100%
+				-webkit-animation: pulse 2s infinite ease-in-out
+				animation: pulse 2s infinite ease-in-out
+				width: 260px
+				height: 260px
+				background-color: #6ba1f7
+				opacity: .5
+				animation-delay: .6s
+				z-index: -2
+
+.modal-hint
+	padding: 30px 10px
+	background: linear-gradient(rgb(245, 247, 246) 0px, rgb(213, 244, 223) 100%)
+	text-align: center	
+	&__text	
+		color: #3e4043
+		font-family: 'MyriadPro-Bold'
+		font-size: 16px
+		line-height: 18px
+		letter-spacing: 0.4px
+		text-transform: uppercase
+		margin: 0
+		animation: shake-slow 1s infinite ease-in-out
+		animation-delay: .6s
+		cursor: pointer
+
+@keyframes shake-slow
+	0% 
+		transform: translate(2px, 1px) rotate(0deg)
+	10% 
+		transform: translate(-1px, -2px) rotate(-1deg) 
+	20% 
+		transform: translate(-3px, 0px) rotate(1deg)
+	30% 
+		transform: translate(0px, 2px) rotate(0deg)
+	40% 
+		transform: translate(1px, -1px) rotate(1deg)
+	50% 
+		transform: translate(-1px, 2px) rotate(-1deg)
+	60% 
+		transform: translate(-3px, 1px) rotate(0deg)
+	70% 
+		transform: translate(2px, 1px) rotate(-1deg)
+	80% 
+		transform: translate(-1px, -1px) rotate(1deg)
+	90% 
+		transform: translate(2px, 2px) rotate(0deg)
+	100% 
+		transform: translate(1px, -2px) rotate(-1deg)
+
+//
+// Modal wain player
+//	
+
+.wait-palyer
+	padding: 0 60px 30px
+	display: flex
+	justify-content: space-between	
+	&__left
+		max-width: 260px
+		width: 100%
+		height: 340px
+		text-align: center
+	&__box
+		position: relative
+		margin-bottom: 20px
+		i
+			position: absolute
+			top: 0
+			bottom: 0
+			left: 10px
+			margin: auto
+			z-index: 5
+			border-radius: 50%
+	&__avatar
+		position: relative
+		width: 140px
+		height: 140px
+		margin: auto
+		border: 1px solid #f2f2f2
+		border-radius: 50%	
+		img
+			position: absolute
+			top: 0
+			bottom: 0
+			left: 0
+			right: 0
+			margin: auto
+			border-radius: 50%	
+			max-width: 100px
+			width: 100%
+		&:after
+			position: absolute
+			content: ''
+			top: 0
+			left: 0
+			bottom: 0
+			right: 0
+			margin: auto
+			width: 115px
+			height: 115px
+			border: 1px solid #f2f2f2
+			border-radius: 50%	
+	&__nick
+		color: #3e4043
+		font-family: 'MyriadPro-Bold'
+		font-size: 18px
+		letter-spacing: .4px	
+		margin: 0 0 15px		
+	&__rate
+		color: #ffa542
+		font-family: 'MyriadPro-Bold'
+		font-size: 30px
+		line-height: 17px
+		letter-spacing: 1px
+		margin: 0 0 25px
+		display: inline-block
+		span
+			text-align: right
+			font-size: 10px
+			text-transform: uppercase
+			margin-right: 7px
+			letter-spacing: 2px
+			display: block
+		&--load
+			margin: 0 0 17px
+			i
+				animation: 0.9s linear 0s normal none infinite rot	
+	&__key
+		color: #8e8e8e
+		font-family: 'Roboto-Bold'
+		font-size: 18px
+		line-height: 24px
+		letter-spacing: 0.45px
+		margin: 0 0 10px
+	&__text
+		color: #8e8e8e
+		font-family: 'Roboto-Bold'
+		font-size: 18px
+		line-height: 24px
+		letter-spacing: 0.45px
+		margin: 0			
+	&__tickets
+		color: #8e8e8e
+		font-family: 'Roboto-Bold'
+		font-size: 18px
+		line-height: 24px
+		letter-spacing: 0.45px
+		margin: 0	
+	&--win	
+		.wait-palyer__box i
+			box-shadow: 0 4px 59px rgba(2,2,3,.4)
+	&--lose
+		.wait-palyer__avatar img
+			opacity: .5
+
+	&__center
+		text-align: center
+		display: flex
+		flex-direction: column
+		justify-content: flex-end
+		border-radius: 3px
+		background-color: #f2f2f2
+		margin: 0 25px
+		padding: 15px 20px
+		&--one
+			justify-content: center
+	&__roulette	
+		text-align: center
+		border-radius: 3px
+		background: #f2f2f2
+		margin: 0 25px
+		max-width: 100px
+		width: 100%
+		padding: 0 20px
+		position: relative
+		overflow: hidden
+		height: 340px
+		&:before
+			position: absolute
+			content: ''
+			z-index: 100
+			top: 0
+			left: 0
+			right: 0
+			height: 70px
+			box-shadow: 0 45px 46px rgba(254,254,254,.9) inset
+		&:after
+			position: absolute
+			content: ''
+			z-index: 100
+			bottom: 0
+			left: 0
+			right: 0
+			height: 70px
+			box-shadow: 0 -45px 46px rgba(254,254,254,.9) inset	
+		&-slider
+			height: 100%
+			img
+				max-width: 60px
+				width: 100%
+		&-orange
+			width: 60px !important
+			height: 60px !important
+			border: 2px solid #f7b13a
+			border-radius: 50%
+			background: #f6d8a7
+			margin: 5px auto
+			overflow: hidden
+			position: relative
+			img
+				position: absolute
+				top: 0
+				left: 0
+				right: 0
+				bottom: 0
+				margin: auto
+				width: 46px
+				height: 46px
+		&-blue
+			width: 60px !important
+			height: 60px !important
+			border: 2px solid #337ff3
+			border-radius: 50%
+			background: #95c4ff
+			margin: 5px auto
+			overflow: hidden
+			position: relative
+			img
+				position: absolute
+				top: 0
+				left: 0
+				right: 0
+				bottom: 0
+				margin: auto
+				width: 46px
+				height: 46px
+		&-circle
+			position: absolute
+			top: 145px
+			left: 0
+			right: 0
+			margin: auto
+			width: 60px
+			height: 60px
+			border: 3px solid #487fd1
+			border-radius: 50%
+	&__bet
+		font-family: 'Roboto-Light'
+		font-size: 22px
+		line-height: 24px
+		color: #929292
+		letter-spacing: 0.4px
+		margin: 0
+		&-done
+			color: #ffa542
+			font-family: 'MyriadPro-Bold'
+			font-size: 18px
+			line-height: 24px
+			letter-spacing: 1px
+			margin: 0 0 60px
+			white-space: nowrap
+	&__vs	
+		color: #929292
+		font-family: 'Roboto-Bold'
+		font-size: 40px
+		text-transform: uppercase
+		display: block
+		margin: 15px 0
+	&__value
+		font-family: 'Roboto-Light'
+		font-size: 16px
+		line-height: 24px
+		color: #929292
+		letter-spacing: 0.4px
+		margin: 0
+	&-timer	
+		&__text
+			color: #ffa542
+			font-family: 'MyriadPro-Bold'
+			font-size: 30px
+			line-height: 17px
+			letter-spacing: 1px
+			margin: 26px 0 40px	
+	&__timer
+		margin-top: 12px
+		i
+			transform: scale(1.7)
+			margin-bottom: 12px
+		&-text
+			color: #f7b13a
+			font-family: 'Roboto-Light'
+			font-size: 24px
+			line-height: 24px
+			letter-spacing: 1.8px
+			margin: 0px 0 30px	
+	&__right	
+		max-width: 260px
+		width: 100%
+		height: 340px
+		text-align: center
+		.wait-palyer__box
+			i
+				left: auto
+				right: 10px
+
+	&__loader
+		position: relative
+		width: 140px
+		height: 140px
+		margin: 0 auto 20px
+		border: 1px solid #f2f2f2
+		border-radius: 50%
+		&:before
+			position: absolute
+			content: ''
+			top: 0
+			left: 0
+			bottom: 0
+			right: 0
+			margin: auto
+			width: 100px
+			height: 100px
+			background-color: #efefef
+			border-radius: 50%		
+		i
+			position: absolute
+			top: 0
+			bottom: 0
+			left: 0
+			right: 0
+			margin: auto
+			animation: 0.9s linear 0s normal none infinite rot
+		&:after
+			position: absolute
+			content: ''
+			top: 0
+			left: 0
+			bottom: 0
+			right: 0
+			margin: auto
+			width: 115px
+			height: 115px
+			border: 1px solid #f2f2f2
+			border-radius: 50%		
+		&-hint
+			color: #a3a3a3
+			font-family: 'Roboto-Bold'
+			font-size: 16px
+			line-height: 24px
+			letter-spacing: 0.4px
+			margin: 0 0 70px
+	&__action
+		overflow: hidden
+		text-align: center
+		padding: 40px 0
+		background-image: linear-gradient(86deg, #f5983d 0%, #f67e3d 100%)
+		&-text
+			position: relative
+			color: #fbfbfb	
+			font-family: 'MyriadPro-Bold'
+			font-size: 16px
+			line-height: 18px
+			letter-spacing: .4px
+			text-transform: uppercase
+			position: relative
+			margin: auto
+			animation: shake 2s infinite ease-in-out
+			animation-delay: .6s
+			display: inline-block
+			z-index: 5
+			&:before
+				content: ''
+				position: absolute
+				left: -150px
+				top: -100px
+				border-radius: 40%
+				height: 226px
+				width: 465px
+				opacity: .8
+				animation: pulse 2s infinite ease-in-out
+				animation-delay: .6s
+				z-index: -2
+				background: #f78b41
+			&:after
+				content: ''
+				position: absolute
+				left: -50px
+				top: -75px
+				border-radius: 40%
+				height: 178px
+				width: 262px
+				background: #f79444
+				animation: pulse 2s infinite ease-in-out
+				animation-delay: .2s
+				opacity: .7
+				z-index: -3
+	&__spinner
+		padding: 30px
+		text-align: center
+		background: linear-gradient(to bottom, rgba(245,247,246,1) 0%, rgba(213,244,223,1) 100%)
+		&-text
+			color: #3e4043
+			font-family: 'MyriadPro-Bold'
+			font-size: 16px
+			line-height: 18px
+			letter-spacing: 0.4px
+			text-transform: uppercase
+			margin: 0 0 15px
+		&-icon
+			animation: 0.9s linear 0s normal none infinite rot	
+	
+.modal--done
+	.wait-palyer__center
+		justify-content: flex-start
+	.wait-palyer__vs
+		margin: 20px 0 50px
+	.wait-palyer__bet
+		margin: 0 0 10px	
+	.wait-palyer__timer-text
+		margin: 0	
+.modal--done-two
+	.wait-palyer__center
+		justify-content: flex-start
+	.wait-palyer__vs
+		margin: 20px 0 50px
+	.wait-palyer__bet-done
+		margin: 0 0 20px
+	.wait-palyer__timer	
+		margin-top: 30px	
+	.wait-palyer__timer-text
+		margin: 0	
+
+.modal--wait
+	.wait-palyer__center
+		justify-content: flex-start
+	.wait-palyer__vs
+		margin: 20px 0 50px
+	.wait-palyer__bet
+		margin: 0 0 40px	
+	.wait-palyer__timer-text
+		margin: 0	
+	.wait-palyer__timer
+		margin-top: 40px
+
+//
+// Modal referral list
+//	
+
+.ref-list
+	&__item
+		display: flex
+		justify-content: space-between
+		align-items: center
+		background: #f3f5f7
+		padding: 10px 25px
+		border-radius: 3px
+		box-shadow: 0 3px 8px rgba(2, 2, 3, 0.07)
+		margin-bottom: 12px 	
+		&:last-child
+			margin-bottom: 0
+	&__left
+		display: flex
+		align-items: center		
+	&__avatar
+		max-width: 32px
+		width: 100%
+		border-radius: 50%
+		margin-right: 15px
+	&__name
+		color: #3e4043
+		font-family: 'Roboto-Bold'
+		font-size: 13px
+		line-height: 22px
+		letter-spacing: 0.33px
+		margin: 0			
+	&__value
+		font-family: 'Roboto-Light'
+		font-size: 14px
+		line-height: 18px
+		color: #a9a9a9
+		letter-spacing: 0.35px
+		margin: 0
+	&__level	
+		color: #f6cd3d
+		font-family: 'Taile-Bold'
+		font-size: 16px
+		line-height: 24px
+		text-transform: uppercase
+		letter-spacing: 0.4px
+		margin: 0			
+
+.paginations
+	padding: 15px 0
+	display: flex
+	align-items: center
+	justify-content: center
+	&__link
+		border-radius: 2px
+		background-color: #f1f4f7
+		font-family: 'MyriadPro-Bold'
+		width: 40px
+		height: 40px
+		line-height: 40px
+		color: #7d7f83
+		letter-spacing: 0.45px
+		text-align: center
+		margin: 0 5px
+		text-decoration: none
+		display: block
+		&--active
+			background-color: #7d7f83
+			color: #f1f4f7
+
+
+@import "media" // Всегда в конце

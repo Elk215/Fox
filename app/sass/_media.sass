@@ -1,0 +1,1028 @@
+
+/*==========  Desktop First  ==========*/
+
+/* Large Devices, Wide Screens */
+
+@media only screen and (max-width : 1670px)
+	.game__left 
+    	max-width: 220px
+	.game__center
+		left: 211px	
+		right: auto
+	.game__right	
+		max-width: calc(65% - 95px)		
+@media only screen and (max-width : 1500px)
+	.nav
+		&__item	
+			margin-right: 5px
+		&__link
+			padding: 30px 10px	
+	
+	// For hidden chat col		
+	// .main__center
+	// 	width: calc(100% - 300px)	
+	// 	&--close
+	// 		width: calc(100% - 300px)	
+
+@media only screen and (max-width : 1440px)		
+	.coin-game__left
+		justify-content: space-between
+	.coin-game__right
+		justify-content: space-between
+	.coin-game__wrap2
+		flex-grow: 2	
+		justify-content: space-between
+	.coin-game__wrap
+		justify-content: center
+		max-width: 110px
+	.coin-game__right .coin-game__wrap
+		margin-right: 5%	
+	.coin-game__left .coin-game__wrap
+		margin-left: 5%	
+	.coin-game__text
+		margin: 0	
+	.coin-game__right .coin-game__name
+		margin: 0	
+	.game
+		padding: 0 10px
+	.game__center
+		left: auto
+		right: 440px
+		z-index: 15
+	.game__right
+		max-width: 412px	
+	.game__time
+		margin-left: 10px	
+@media only screen and (max-width : 1415px)
+	.winner__wrap
+		justify-content: space-between	
+	.winner__center
+		margin: 0				
+@media only screen and (max-width : 1400px)	
+	.winners__slider
+		max-width: 592px
+	.game__left
+		max-width: 150px			
+@media only screen and (min-width : 1024px)	and (max-width : 1305px)	
+	.social-menu__wrap
+		display: none
+	.social-menu__wrap--adaptive
+		display: inline-flex	
+	.social-menu
+		position: absolute
+		background: #ededed
+		right: 0
+		padding: 20px 10px 10px 10px
+		top: 35px
+		z-index: 100
+		display: none
+		&__open
+			display: inline-block
+	.body--dark .social-menu		
+		background: #181a1e	
+
+@media only screen and (max-width : 1300px)	
+	.hist-balance__data
+		margin-left: 15px
+	.hist-balance
+		padding: 37px 15px	
+@media only screen and (max-width : 1280px)
+	.header
+		&__left
+			width: 250px
+		&__center
+			width: calc(100% - 500px)
+		&__right
+			width: 250px	
+	.main
+		&__left
+			width: 250px
+			padding: 0
+		&__center
+			width: calc(100% - 500px)
+			&--close
+				width: calc(100% - 250px)
+		&__right
+			width: 250px
+	.chat
+		&--close
+			right: -251px	
+	.balance__input	
+		max-width: 100px
+		padding: 0
+	.balance__output	
+		max-width: 100px	
+		padding: 0	
+	.chat__bottom-button
+		max-width: 100px		
+		padding: 0
+	.coin-game__left
+		padding: 10px 20px 10px 10px
+	.coin-game__right	
+		padding: 10px 10px 10px 20px
+	.coin-game__left .coin-game__box
+		margin-right: 5px	
+	.coin-game__right .coin-game__box	
+		margin-left: 5px
+	.coin-game__left .coin-game__avatar
+		margin: 0
+	.coin-game__avatar
+		margin: 0	
+	.coin-game__right .coin-game__wrap
+		margin: 0		
+	.coin-game__left .coin-game__wrap
+		margin: 0	
+	.coin-game__left .coin-game__box i,
+	.coin-game__right .coin-game__box i
+		display: none
+	.coin-history__left 
+		.coin-history-box__col--last
+			display: none	
+		.coin-history-box__col--center:after
+			display: none	
+	.coin-history__right
+		.coin-history-box__col--last
+			&:before
+				position: absolute
+				content: ''
+				left: 0
+				top: 0
+				width: 1px
+				height: 42px
+				background-color: #e1e1e1
+		.coin-history-box__col--center
+			display: none			
+	.body--dark		
+		.coin-history__right .coin-history-box__col--last
+			&:before
+				background-color:  #1b1c21
+	.coin-history-box__col
+		width: 50%	
+	.coin-history__title
+		text-align: center
+		font-size: 14px
+		padding: 0
+	.winners__slider
+		max-width: 492px
+	.choose-winner__slider
+		max-width: 500px
+@media only screen and (max-width : 1200px)	
+	.winner__left
+		width: 130px
+		height: 130px	
+	.winner__right
+		width: 130px
+		height: 130px
+
+	.winner-circle__text
+		margin: 0 0 10px	
+	.winner-circle
+		padding-top: 35px
+	.winner__right .winner-circle__numbers i
+		left: 0		
+	.ref-value
+		padding: 25px 15px
+	.ref-value__link
+		max-width: 60px			
+	.ref-link
+		padding: 15px 15px 25px
+	.game__left
+		display: none
+	.game
+		justify-content: flex-end	
+@media only screen and (max-width : 1190px)		
+	.game__center
+		left: 0
+	.game__right
+		max-width: calc(85% - 95px)		
+@media only screen and (max-width : 1150px)	
+	.winner__hash
+		font-size: 12px		
+@media only screen and (max-width : 1135px)		
+	.game__center
+		width: 110px
+		height: 110px
+		bottom: 0
+		left: 0		
+	.game__right
+		max-width: 78%
+	.game__bank
+		width: 110px
+		height: 110px	
+		padding-top: 22px
+	.game__winner
+		margin-top: 0
+		&:after
+			display: none
+		&-img
+			max-width: 74px	
+@media only screen and (max-width : 1120px)	
+	.winners__slider
+		max-width: 392px
+@media only screen and (max-width : 1100px)
+	.nav__link
+		padding: 30px 5px	
+	.winner__hash
+		font-size: 9px				
+@media only screen and (max-width : 1070px)		
+	.coin-game-history__wrap
+		max-width: 120px
+	.coin-game-history__text
+		margin: 0		
+	.coin-game-history__name
+		margin-right: 5px			
+
+@media only screen and (max-width : 1023px)	
+	body
+		min-width: 100%
+		max-width: 100%
+		width: 100%
+	.header
+		flex-wrap: wrap
+	.header__left
+		width: 100%
+		order: 1
+		display: flex
+		justify-content: space-between
+		align-items: center
+		padding: 15px 20px
+		&:after
+			bottom: 0
+	.header__right
+		display: none
+	.header__center
+		width: 100%
+		order: 3
+		border-bottom: 0
+		flex-wrap: wrap
+		display: none
+	.chat--fixed
+		position: absolute
+	.nav
+		order: 2
+		width: 100%
+		&__list
+			flex-wrap: wrap
+			width: 100%
+		&__item
+			padding: 0 20px
+			margin: 0
+			width: 100%	
+			border-bottom: 1px solid #e1e1e1
+		&__link
+			text-align: center	
+			position: static
+			padding: 10px 5px	
+			&:after
+				display: none
+			&:before
+				display: none	
+	.body--dark
+		.nav__item
+			border-bottom: 1px solid #1c1e23
+		.social-menu__wrap
+			border-bottom: 1px solid #1c1e23
+		.dropdown--mobile
+			border-top: 1px solid #1c1e23	
+	.menu
+		&-open
+			display: flex				
+	.social-menu
+		width: 100%
+		justify-content: space-between
+		&__item
+			margin-left: 0
+			a
+				display: flex
+		&__open--mobile	
+			display: flex
+			margin-left: 20px
+		&__wrap
+			display: flex
+			width: 100%	
+			border-bottom: 1px solid #e1e1e1
+			padding: 0 20px 10px 20px
+	.user
+		padding: 0
+		flex-wrap: wrap
+		width: 100%
+		&--mobile
+			order: 2
+			width: 100%
+			flex-wrap: wrap
+			display: none
+		&__arrow
+			position: relative
+			width: 30px
+			height: 30px
+			display: flex
+			&:after
+				position: absolute
+				content: ''
+				height: 10px
+				width: 10px
+				display: block
+				border: 2px solid #b5bac2
+				border-right-width: 0
+				border-top-width: 0
+				transform: rotate(-45deg)
+				position: absolute
+				top: 0
+				left: 0
+				right: 0
+				bottom: 0
+				margin: auto
+				transition: .3s
+			&--active
+				&:after
+					transform: rotate(135deg)
+
+		&__close	
+			display: none
+		&__open
+			display: none !important
+		&__ava
+			margin-left: 20px
+		&__left
+			margin-right: 20px	
+	.main
+		&__left
+			display: none
+		&__center
+			width: 100%
+			&--close
+				width: 100%
+				padding: 0
+			&--king	
+				padding: 0
+				&-wrap
+				    border-bottom: 4px solid #e8ecf2
+		&__right
+			width: 320px
+	.body--dark
+		.main__center--king-wrap		
+			border-bottom: 4px solid #17181c
+	.dropdown--mobile
+		border-top: 1px solid #e1e1e1
+		display: block
+		width: 100%
+		max-height: 0
+		overflow: hidden
+		transition-property: all
+		transition-duration: .5s
+		transition-timing-function: cubic-bezier(0, 1, 0.5, 1)
+		&--active
+			max-height: 280px	
+			overflow-y: hidden
+	.chat
+		height: calc(100vh - 76px)
+		&:after
+			position: absolute
+			content: ''
+			z-index: -1
+			top: 0
+			bottom: 0
+			right: 0
+			width: calc(100% - 26px)
+			background: #fff
+			border-left: 1px solid #e1e1e1
+		&__body
+
+		&--close
+			right: -321px	
+		&-form--fixed
+			position: fixed
+			bottom: 0
+			right: 0
+			width: 295px
+			z-index: 15
+			background: #fff
+	.body--dark
+		.chat
+			&:after
+				position: absolute
+				content: ''
+				z-index: -1
+				top: 0
+				bottom: 0
+				right: 0
+				width: calc(100% - 26px)
+				background: #15171B
+				border-left: 1px solid #191b20
+		.chat-form--fixed
+			background: #15171B	
+	.mobile-show
+		display: block		
+	.coin-history, .coin-hint
+		display: none
+	.rooms
+		padding: 15px 10px	
+		&__title
+			margin: 0 0 10px
+		&__wrap
+			margin-bottom: 10px		
+		&__classic
+			height: 45px
+			line-height: 45px
+			width: 110px	
+		&__small
+			height: 45px
+			line-height: 45px
+			width: 110px		
+		&__text
+			line-height: 17px
+	.bank			
+		padding: 15px 10px	
+		&__button
+			margin-bottom: 5px
+	.winners
+		padding: 35px 0 15px	
+		margin-bottom: 15px
+		&__title
+			margin-bottom: 15px		
+		&__game
+			top: 15px
+			right: 10px	
+		&__slider
+			max-width: 290px
+	.jackpot-timer
+		margin-bottom: 15px
+		&__wrap
+			max-width: 90%
+		&__time
+			font-size: 28px
+			line-height: 19px
+	.choose-winner
+		padding: 35px 0 15px	
+		margin-bottom: 10px
+		&__title
+			margin-bottom: 15px	
+		&__game
+			top: 15px
+			right: 10px		
+		&__slider
+			margin: 0 auto 10px	
+	.winner
+		padding: 15px 0		
+		margin-bottom: 15px
+		&__title
+			margin: 0 0 10px
+		&__avatar
+			margin-top: 0
+		&__center
+			padding: 15px 0		
+		&__wrap
+			justify-content: center	
+		&__right
+			.winner-circle__numbers
+				padding-left: 30px
+				i
+					left: 0
+		&__hash
+			font-size: 11px	
+		&-circle
+			padding-top: 39px
+			width: 100%
+			height: auto
+			display: flex
+			align-items: flex-end
+			justify-content: center
+			padding: 0
+			background: transparent
+			&__text	
+				line-height: 16px	
+				margin: 0 5px 0 0
+	.jackpot-history
+		padding: 0 10px		
+		&__img
+			display: none	
+		&-top
+			padding: 15px 10px	
+			text-align: center
+		&-bottom
+			padding: 15px 10px	
+			text-align: center	
+			&__left
+				margin-bottom: 10px
+			&__right
+				width: 100%
+		&__button
+			margin: auto	
+	.history-item
+		padding: 15px 10px	
+		&__avatar
+			margin-right: 10px
+	.message__text
+		line-height: 18px
+		padding: 8px 11px		
+	.chat__bottom-text
+		line-height: 17px
+		padding: 15px 20px	
+	.chat__title
+		margin-bottom: 3px	
+	.button
+		line-height: 45px
+		height: 45px	
+		&--gray	
+			background-color: darken(#f1f4f7, 2%) 
+		&--border	
+			line-height: 41px
+		&--dark
+			line-height: 41px	
+
+	.chat__bottom-button
+		margin: 15px 0 50px	
+	.starting
+		padding: 20px 10px 20px
+		&__title
+			font-size: 22px
+			margin: 0 0 15px
+		&__text
+			line-height: 18px	
+	.padding-wrap
+		padding: 15px
+	.answer__top
+		padding: 15px 55px 15px 15px
+	.answer__title
+		line-height: 18px
+	.answer__body
+		padding: 15px	
+	.answer__text
+		line-height: 18px
+		margin: 0		
+	.balance	
+		padding: 15px 10px	
+		&__title
+			margin-bottom: 10px
+			display: inline-block
+		&__value
+			margin-bottom: 7px	
+			display: inline-block
+	.help	
+		padding: 15px 10px	
+		&__title
+			margin-bottom: 10px	
+			line-height: 20px	
+	.application		
+		padding: 15px 10px	
+		&__title
+			margin-bottom: 10px	
+			line-height: 20px	
+	.hint
+		&__text
+			line-height: 18px	
+		&__title
+			margin-bottom: 5px	
+		&__icon
+			margin-right: 10px	
+	.bonus
+		padding: 15px 0			
+	.get-bonus
+		&__body
+			height: 160px	
+		&__button
+			font-size: 16px
+			line-height: 20px		
+			width: 150px
+			height: 150px
+			padding-top: 56px
+		&__bottom
+			padding: 15px 5px	
+			text-align: center
+		&__info
+			line-height: 21px
+	.disabled-bonus__button		
+		font-size: 16px
+		line-height: 20px		
+		width: 150px
+		height: 150px
+		padding-top: 56px	
+	.profile
+		padding: 15px 10px 
+		&__avatar	
+			border: 1px solid #e8ecf2
+			&:before
+				border: 1px solid #e8ecf2
+	.body--dark			
+		.profile
+			&__avatar	
+				border: 1px solid #1a1c21
+				&:before
+					border: 1px solid #1a1c21
+	.referral 
+		padding-top: 10px
+		margin: 0 0 10px 0
+		&__title
+			margin: 0 0 15px	
+		&__wrap
+			flex-wrap: wrap
+		&__left
+			width: 100%
+		&__right
+			width: 100%		
+	.ref-level
+		padding: 15px 10px
+		&__top
+			margin-bottom: 5px
+		&__timeline
+			margin-bottom: 7px	
+	.ref-value		
+		padding: 15px 10px
+		margin-bottom: 10px
+		&__text
+			margin: 0
+	.ref-link		
+		padding: 15px 10px
+		&__help
+			display: none
+		&__title
+			margin-bottom: 10px
+		&__wrap
+			margin-bottom: 10px
+		&__link
+			margin-bottom: 10px			
+	.history
+		&__top
+			margin-right: 0
+			padding: 15px 10px		
+			flex-wrap: wrap
+			justify-content: center
+		&__links
+			margin-bottom: 10px	
+		&__help
+			width: 100%	
+		&__body
+			border-bottom: 4px solid #e8ecf2
+	.body--dark
+		.history__body	
+			border-bottom: 4px solid #17181c		
+	.hist-balance
+		padding: 25px 10px	
+		&__source
+			display: none	
+			&--user
+				display: none
+	.game
+		max-height: none	
+		padding: 15px 10px		
+		flex-wrap: wrap
+		justify-content: space-between
+		&__winner
+			margin-top: -5px
+			&:after
+				display: block
+				width: 118px
+				height: 118px
+			&-img
+				max-width: 88px		
+		&__left
+			max-width: 100%
+			display: inline-flex
+			padding: 0
+		&__time
+			text-align: right
+			&-text
+				text-align: center
+		&__title
+			margin-bottom: 10px	
+		&__center
+			position: static
+			width: 140px
+			height: 140px	
+			margin: 0
+		&__right
+			max-width: 100%	
+			align-items: center
+			justify-content: center
+			padding: 10px 0 0 0
+			.game__bank
+				display: none
+		&__bank--mobile
+			display: block		
+		&__participants	
+			display: none		
+		&__bank
+			width: 134px
+			height: 134px	
+			padding-top: 30px
+	.game-history
+		&__item			
+			padding: 15px 10px
+			flex-wrap: wrap
+		&__left
+			margin-bottom: 5px	
+		&__right
+			display: flex
+			justify-content: space-between
+			text-align: left	
+			width: 100%
+		&__title
+			margin: 0	
+			line-height: 17px
+		&__avatar
+			margin-right: 10px	
+	.coin-history.mobile-show
+		display: flex 
+	.coin-history
+		flex-wrap: wrap
+		margin: 0
+		&__left
+			width: 100%
+			margin-bottom: 10px
+			padding: 15px 0
+		&__right
+			width: 100%	
+			padding: 15px 0		
+		&__title
+			margin-bottom: 10px	
+		&-box__col
+			padding-top: 0	
+	.create-game
+		padding: 15px 10px		
+		&__body
+			padding: 20px 0 30px
+	.coin-game__text
+		display: none		
+	.coin-game__box
+		padding: 0 0 3px 0	
+		margin: 0
+
+	.coin-game__right
+		.coin-game__box	
+			margin: 0
+		.coin-game__wrap2
+			justify-content: flex-end	
+		.coin-game__value
+			text-align: right
+		.coin-game__name
+			order: 2	
+	.coin-game__left .coin-game__box
+		margin: 0	
+
+
+	.notification
+		padding: 15px 10px
+		&__title
+			margin-bottom: 10px
+			line-height: 20px
+		&__radio
+			margin-bottom: 6px
+		&__text
+			line-height: 18px
+			margin: 10px 0	
+		.copyright
+			line-height: 18px	
+	.coin-game
+		&__action
+			&--orange
+				.coin-game__button
+					padding: 14px 22px
+			&--blue
+				.coin-game__button
+					padding: 14px 22px		
+		&__left
+			padding: 10px 5px
+		&__right	
+			padding: 10px 5px
+	.coin-game-history
+		&__box 
+			margin-right: 5px
+			i
+				display: none
+		&__left
+			justify-content: space-between
+		&__right
+			width: auto	
+		&__winner
+			margin-left: 0
+		&__loser
+			display: none		
+	.modal
+		margin-top: 0 !important
+		&__top
+			padding: 13px 0
+			&::after
+				left: 10px
+				right: 10px
+		&__close
+			top: 7px
+			right: 5px
+		&__body
+			padding: 15px 0	
+		&__buttons
+			padding: 15px 10px
+			display: flex
+			align-items: center
+			flex-wrap: wrap
+			justify-content: center
+			.button
+				margin: 3px
+		&--help
+			.modal__body
+				padding: 15px 10px		
+		&--bet 
+			.modal__body
+				padding: 15px 10px	
+				.conclusion__balance
+					margin-bottom: 0			
+		&-hint
+			padding: 20px 10px			
+	.conclusion
+		&__balance
+			margin: 0 10px 15px	
+			padding: 10px
+			&-hash
+				overflow: hidden
+		&__where
+			padding: 15px 10px	
+			&-title
+				margin: 0 0 15px
+			&-list
+				flex-wrap: wrap
+	.output-box
+		margin: 0 10px 15px	
+		&__top
+			flex-wrap: wrap	
+		&__hint
+			line-height: 19px	
+	.ref-list
+		&__item		
+			margin-bottom: 10px	
+			padding: 10px
+		&__avatar
+			margin-right: 10px
+		&__center
+			display: none	
+	.coin-create
+		padding: 10px 10px 20px		
+	.wait-palyer
+		&__spinner	
+			padding: 15px 10px	
+	.coin-create
+		&__tickets
+			display: none
+		&__orange
+			height: 320px
+		&__blue
+			height: 320px
+		&__center
+			&--one	
+				justify-content: flex-start
+				margin: 0 10px
+				padding: 15px 10px
+				.coin-create__vs
+					margin: 0 0 15px
+				.wait-palyer__bet-done
+					margin: 0 0 110px			
+	.wait-palyer
+		padding: 0 10px 20px
+		&__left
+			height: 320px
+		&__right	
+			height: 320px
+		&__center
+			margin: 0 10px
+			padding: 15px 10px
+		&__box
+			margin-bottom: 15px	
+			i
+				display: none
+		&__avatar
+			border: 0	
+			width: 80px
+			height: 80px
+			&:after
+				display: none
+			img
+				position: static	
+		&__rate
+			letter-spacing: normal
+			font-size: 18px		
+			margin-bottom: 120px
+			&--load
+				margin-bottom: 114px
+		&__nick
+			margin-bottom: 10px	
+		&__loader
+			width: 80px
+			height: 80px
+			margin-bottom: 15px
+			&:after
+				display: none
+			&:before
+				display: none	
+			&-hint
+				font-size: 15px
+				line-height: 18px	
+				margin: 0 0 149px
+		&__bet
+			&-done
+				margin: 0 0 110px	
+		&__timer
+			&-text
+				font-size: 20px		
+			i
+				margin-bottom: 0		
+				transform: scale(1.3)
+		&__text
+			font-size: 16px
+			line-height: 20px		
+		&-timer__text
+			margin: 0 0 115px
+		&__roulette	
+			margin: 0 10px
+			height: 320px
+			padding: 0 15px
+			&-orange
+				width: 70px !important
+				height: 70px !important
+				img
+					width: 56px
+					height: 56px
+			&-blue	
+				width: 70px !important
+				height: 70px !important
+				img
+					width: 56px
+					height: 56px
+			&-circle
+				top: 56px
+				width: 68px
+				height: 68px
+		&__action
+			padding: 20px 0		
+	.modal--done
+		.wait-palyer__vs		
+			margin: 0 0 15px
+	.modal--wait
+		.wait-palyer__vs
+			margin: 0 0 15px	
+		.wait-palyer__timer	
+			margin-top: 90px
+	.modal--done-two
+		.wait-palyer__vs
+			margin: 0 0 15px
+		.wait-palyer__timer
+			margin-top: 86px
+	.warning__balance
+		padding: 10px			
+		margin-bottom: 10px	
+	.bet-avatar
+		padding: 10px	
+	.bet__form
+		&--left	
+			flex-wrap: wrap
+			justify-content: center
+		&-text
+			width: 100%			
+			text-align: center	
+			margin: 0 0 10px
+	.error
+		width: 300px
+		height: 300px
+		padding: 50px 10px 0
+		&__number
+			font-size: 40px		
+			margin-bottom: 5px
+		&__title
+			font-size: 20px
+			margin-bottom: 10px
+		&__text
+			font-size: 14px
+			line-height: 21px
+			margin-bottom: 10px			
+	.help, .application, .balance, .rooms, 	.copyright, .create-game, .notification, .bank, .profile
+		background: #fff	
+
+	.body--dark
+		.help, .application, .balance, .rooms, 	.copyright, .create-game, .notification, .bank, .profile
+			background: #15171B	
+@media only screen and (max-height : 580px)		
+	.chat
+		height: 100%
+		&:after
+			position: absolute
+			content: ''
+			z-index: -1
+			top: 0
+			bottom: 0
+			right: 0
+			width: calc(100% - 26px)
+			background: #fff
+			border-left: 1px solid #e1e1e1
+		&__body
+			height: 400px
+
+@media only screen and (max-width : 470px)	
+	.coin-game__right
+		.coin-game__box	
+			margin: 0
+		.coin-game__wrap2
+			width: 
+			justify-content: flex-end	
+		.coin-game__value
+			text-align: right
+		.coin-game__name
+			order: 2	
+	.coin-game__left .coin-game__box
+		margin: 0	
